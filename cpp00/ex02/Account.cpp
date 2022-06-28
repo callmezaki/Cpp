@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 02:59:35 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/06/28 02:22:02 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/06/28 19:48:21 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void Account::_displayTimestamp(void)
 {
     std::time_t t = std::time(nullptr);
     std::tm tm = *std::localtime(&t);
-	std::cout << "[" << std::put_time(&tm,"%G%m") << "0" << std::put_time(&tm,"%u");
+	std::cout << "[" << std::put_time(&tm,"%G%m%d") ;
 	std::cout << "_" << std::put_time(&tm,"%I%M%S") << "] ";
 }
 
@@ -103,8 +103,8 @@ void	Account::displayAccountsInfos( void )
 Account::~Account ()
 {
 	Account::_displayTimestamp();
-	Account::_nbAccounts -= 1;
 	std::cout << "index:" << Account::_accountIndex << ";amount:" << Account::_amount << ";closed\n";
+	Account::_nbAccounts -= 1;
 }
 
 void Account::displayStatus(void) const
