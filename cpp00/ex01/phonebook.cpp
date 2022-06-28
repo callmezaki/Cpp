@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:55:51 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/06/27 02:41:30 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/06/27 21:22:03 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ class PhoneBook
 
 int i = 0, n = 0;
 
-
 void	collect_info(Contact *info,int i)
 {
 	std::string tmp;
@@ -133,7 +132,7 @@ void	print_data(std::string s)
 		std::cout << s.substr(0,9) << ".|";
 	else
 	{
-		b = strlen(s.c_str());
+		b = strlen(s.data);
 		std::cout << s ;
 		while(c < 10 - b)
 		{
@@ -156,10 +155,25 @@ void print_all(Contact info)
 	std::cout << "\n";
 }
 
+void print_contact_info(Contact info)
+{
+	std::cout << "\n    First Name     : ";
+	std::cout << info.get_first_name() << "\n";
+	std::cout << "    Lastst Name    : ";
+	std::cout << info.get_last_name() << "\n";
+	std::cout << "    Nickname       : ";
+	std::cout << info.get_nickname() << "\n";
+	std::cout << "    Phone Number   : ";
+	std::cout << info.get_phone_number() << "\n";
+	std::cout << "    Darkest secret : ";
+	std::cout << info.get_darkest_secret() << "\n\n";
+}
+
 void handle_search(Contact *info)
 {
 	int x = 0;
 	int input;
+	std::string in;
 
 	std::cout << "+----------+----------+----------+----------+\n";
 	std::cout << "|  Index   |  F.name  |  L.name  | Nickname |\n";
@@ -171,17 +185,22 @@ void handle_search(Contact *info)
 		std::cout << "+----------+----------+----------+----------+\n";
 		x++;
 	}
-
 	std::cout << "Which contact : ";	
-	std::cin >> input ;
+	if (!std::getline(std::cin,in))
+		exit(0);
+	// std::cin >> input ;
+	input = atoi(in.c_str());
 	if (input > 0 && input < n + 1)
 	{
-		std::cout << "+----------+----------+----------+----------+\n";
-		print_all(info[input - 1]);
-		std::cout << "+----------+----------+----------+----------+\n";
+		print_contact_info(info[input - 1]);
+		// std::cout << "+----------+----------+----------+----------+\n";
+		// std::cout << "|  Index   |  F.name  |  L.name  | Nickname |\n";
+		// std::cout << "+----------+----------+----------+----------+\n";
+		// print_all(info[input - 1]);
+		// std::cout << "+----------+----------+----------+----------+\n";
 	}
 	else
-		std::cout << "Ivalid Index\n";
+		std::cout << "Ivalid Index" << "\n";
 }
 
 int main()
@@ -195,16 +214,16 @@ int main()
 		
 		if (!std::getline(std::cin,input))
 			exit(0);
-		if (!strcmp(input.c_str(), "ADD") || !strcmp(input.c_str(), "add"))
+		if (!input.compare("ADD") || !input.compare("add"))
 		{
 			collect_info(phbook.get_info(),i);
 			i++;
 			if (n < 8)
 				n++;
 		}
-		else if (!strcmp(input.c_str(), "SEARCH") || !strcmp(input.c_str(), "search"))
+		else if (!input.compare("SEARCH") || !input.compare("search"))
 			handle_search(phbook.get_info());
-		else if (!strcmp(input.c_str(), "EXIT") || !strcmp(input.c_str(), "exit"))
+		else if (!input.compare("EXIT") || !input.compare("exit"))
 			exit(0);
 		else if (input[0] != '\0')
 			std::cout << "INVALID Cammand\n";

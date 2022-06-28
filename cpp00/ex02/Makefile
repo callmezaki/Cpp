@@ -2,7 +2,7 @@ NAME = Acc
 
 CC = c++
 
-OBJECTS = Account.o
+OBJECTS = Account.o tests.o
 
 # COLOR = \033[0;32m
 
@@ -15,7 +15,7 @@ all: $(NAME)
 # ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚═════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝"
 
 $(NAME): $(OBJECTS)
-	@$(CC) -Wall -Wextra -Werror Account.cpp -o $(NAME)
+	@$(CC) -Wall -Wextra -Werror Account.cpp tests.cpp -o $(NAME)
 
 %.o : %.cpp 
 	@$(CC) -Wall -Wextra -Werror -I Account.hpp -c $<
