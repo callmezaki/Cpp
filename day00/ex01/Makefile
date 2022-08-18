@@ -15,7 +15,7 @@ all: $(NAME)
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚═════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝\n"
 
 $(NAME): $(OBJECTS)
-	@$(CC) -Wall -Wextra -Werror phonebook.cpp -I phonebook.hpp -o $(NAME)
+	@$(CC) -Wall -Wextra -Werror  -std=c++98  phonebook.cpp setters_getters.cpp -I phonebook.hpp  -o $(NAME)
 
 %.o : %.cpp 
 	@$(CC) -Wall -Wextra -Werror -c $<

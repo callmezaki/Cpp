@@ -7,8 +7,10 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Tue Jun 28 19:47:55 2022
+
+# Make data base, printed on Thu Aug 18 16:00:28 2022
 
 # Variables
 
@@ -25,7 +27,7 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/zait-sli/Desktop/cppp/cpp00
+CURDIR := /Users/zait-sli/Desktop/cppp
 # makefile
 SHELL = /bin/sh
 # environment
@@ -37,9 +39,11 @@ MAKEFILE_LIST :=
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cd3400338s/T/vscode-ipc-98dd9b98-c4f3-44b4-ac76-7be5cba4a579.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cd3400338s/T/vscode-ipc-adc304d2-bdf3-4be0-90c0-e066ef98624e.sock
 # environment
 VSCODE_CWD = /
+# environment
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.rqOxZYMf9c/Render
 # environment
 PATH = /Users/zait-sli/goinfre/homebrew/bin:/Users/zait-sli/goinfre/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
@@ -51,13 +55,13 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.XUWVumGJss/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.vFppWN4wiL/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /Users/zait-sli/Desktop/cppp/cpp00
+PWD = /Users/zait-sli/Desktop/cppp
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -72,9 +76,6 @@ VSCODE_CODE_CACHE_PATH = /Users/zait-sli/Library/Application Support/Code/Cached
 LOGNAME = zait-sli
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
- 
-make: *** No rule to make target `all'.  Stop.
-
 # environment
 ZSH = /Users/zait-sli/.oh-my-zsh
 # environment
@@ -116,7 +117,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.2148
+XPC_SERVICE_NAME = com.microsoft.VSCode.1064
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -144,9 +145,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2241
+VSCODE_PID = 13766
 # variable set hash-table stats:
-# Load=65/1024=6%, Rehash=0, Collisions=1/86=1%
+# Load=66/1024=6%, Rehash=0, Collisions=1/87=1%
 
 # Pattern-specific Variable Values
 
@@ -154,9 +155,9 @@ VSCODE_PID = 2241
 
 # Directories
 
-# . (device 16777225, inode 6410250): 7 files, no impossibilities.
+# . (device 16777227, inode 6423446): 6 files, no impossibilities.
 
-# 7 files, no impossibilities in 1 directories.
+# 6 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -228,6 +229,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Tue Jun 28 19:47:55 2022
+# Finished Make data base on Thu Aug 18 16:00:28 2022
 
  

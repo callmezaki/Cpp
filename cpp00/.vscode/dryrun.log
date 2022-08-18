@@ -1,7 +1,0 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory `/Users/zait-sli/Desktop/cppp/cpp00'
- 
-make: Leaving directory `/Users/zait-sli/Desktop/cppp/cpp00'
- 
-make: *** No targets specified and no makefile found.  Stop.
-

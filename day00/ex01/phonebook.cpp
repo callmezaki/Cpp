@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:55:51 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/06/28 19:38:16 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/06/29 23:25:17 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include "phonebook.hpp"
 
 int i = 0, n = 0;
+
+
 
 void	collect_info(Contact *info,int i)
 {
@@ -145,14 +147,13 @@ int main()
 {
 	std::string input;
 	PhoneBook phbook;
-
 	while(1)
 	{
 		std::cout << "Enter your cammand : ";
 		
 		if (!std::getline(std::cin,input))
 			exit(0);
-		if (!input.compare("ADD") || !input.compare("add"))
+		if (!input.compare("ADD"))
 		{
 			if (i == 8)
 				i = 0;
@@ -161,9 +162,9 @@ int main()
 			if (n < 8)
 				n++;
 		}
-		else if (!input.compare("SEARCH") || !input.compare("search"))
+		else if (!input.compare("SEARCH"))
 			handle_search(phbook.get_info());
-		else if (!input.compare("EXIT") || !input.compare("exit"))
+		else if (!input.compare("EXIT"))
 			exit(0);
 		else if (input[0] != '\0')
 			std::cout << "INVALID Cammand\n";

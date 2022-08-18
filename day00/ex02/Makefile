@@ -15,10 +15,10 @@ all: $(NAME)
 ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝\n"
 
 $(NAME): $(OBJECTS)
-	@$(CC) -Wall -Wextra -Werror Account.cpp tests.cpp -o $(NAME)
+	@$(CC) -Wall -Wextra -Werror -std=c++98 Account.cpp tests.cpp -o $(NAME)
 
 %.o : %.cpp 
-	@$(CC) -Ofast -Wall -Wextra -Werror -I Account.hpp -c $<
+	@$(CC) -Wall -Wextra -Werror -I Account.hpp -c $<
 clean:
 	@rm -rf $(OBJECTS) 
 
