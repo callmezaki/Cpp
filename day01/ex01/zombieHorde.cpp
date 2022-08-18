@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/25 22:05:28 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/08/18 16:54:21 by zait-sli         ###   ########.fr       */
+/*   Created: 2022/08/18 21:37:37 by zait-sli          #+#    #+#             */
+/*   Updated: 2022/08/18 22:01:07 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cctype>
 #include <iostream>
+#include "Zombie.hpp"
 
-int main(int ac, char **av)
+Zombie* zombieHorde( int N, std::string name )
 {
-	int i = 1, j = 0;
-	
-	if (ac == 1)
+	if (N < 0)
+		return(NULL);
+	Zombie *zz = new Zombie[N];
+	for (int i = 0; i < N; ++i)
 	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-		return(0);	
+		zz[i].setName(name);
+		zz[i].announce();
 	}
-	while(av[i])
-	{
-		j = 0;
-		while(av[i][j])
-		{
-			std::cout << (char)toupper(av[i][j]);
-			j++;
-		}
-		i++;
-	}
-	std::cout << "\n";
-	return(0);
+	return(&zz[0]);
 }

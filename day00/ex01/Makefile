@@ -2,7 +2,7 @@ NAME = phonebook
 
 CC = c++
 
-OBJECTS = phonebook.o
+OBJECTS = phonebook.o setters_getters.o
 
 COLOR = \033[0;32m
 

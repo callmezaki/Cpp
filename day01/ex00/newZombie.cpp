@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/25 22:05:28 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/08/18 16:54:21 by zait-sli         ###   ########.fr       */
+/*   Created: 2022/08/18 17:06:28 by zait-sli          #+#    #+#             */
+/*   Updated: 2022/08/18 17:33:09 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cctype>
 #include <iostream>
+#include "Zombie.hpp"
 
-int main(int ac, char **av)
+Zombie*	newZombie( std::string name )
 {
-	int i = 1, j = 0;
-	
-	if (ac == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-		return(0);	
-	}
-	while(av[i])
-	{
-		j = 0;
-		while(av[i][j])
-		{
-			std::cout << (char)toupper(av[i][j]);
-			j++;
-		}
-		i++;
-	}
-	std::cout << "\n";
-	return(0);
+	Zombie *zz = new Zombie(); 
+
+	zz->setName(name);
+	return(zz);
 }
