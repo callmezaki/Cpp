@@ -6,11 +6,10 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 16:53:43 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/08/18 22:00:28 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/08/19 16:17:26 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cctype>
 #include <iostream>
 #include "Zombie.hpp"
 

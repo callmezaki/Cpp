@@ -17,9 +17,9 @@ class Contact
 		std::string	get_nickname();
 		std::string	get_phone_number();
 		std::string	get_darkest_secret();
+		int get_id();
 		Contact(void);
 		~Contact(void);
-		int get_id();
 		void	set_first_name(std::string	first_n);
 		void	set_last_name(std::string	last_name);
 		void	set_nickname(std::string	nickname);

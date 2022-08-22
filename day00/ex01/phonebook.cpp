@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:55:51 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/06/29 23:25:17 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/08/19 16:44:01 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 #include "phonebook.hpp"
 
 int i = 0, n = 0;
-
-
 
 void	collect_info(Contact *info,int i)
 {
@@ -126,7 +124,6 @@ void handle_search(Contact *info)
 	std::cout << "+----------+----------+----------+----------+\n";
 	while(x < n)
 	{
-		
 		print_all(info[x]);
 		std::cout << "+----------+----------+----------+----------+\n";
 		x++;
@@ -136,9 +133,7 @@ void handle_search(Contact *info)
 		exit(0);
 	input = atoi(in.c_str());
 	if (input > 0 && input < n + 1)
-	{
 		print_contact_info(info[input - 1]);
-	}
 	else
 		std::cout << "Ivalid Index" << "\n";
 }
@@ -152,7 +147,7 @@ int main()
 		std::cout << "Enter your cammand : ";
 		
 		if (!std::getline(std::cin,input))
-			exit(0);
+			exit(1);
 		if (!input.compare("ADD"))
 		{
 			if (i == 8)
