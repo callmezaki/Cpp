@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 17:50:01 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/08/23 00:20:58 by zait-sli         ###   ########.fr       */
+/*   Created: 2022/08/21 17:48:39 by zait-sli          #+#    #+#             */
+/*   Updated: 2022/08/21 17:51:02 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<iostream>
-#include<cctype>
-#include "Harl.hpp"
+#ifndef _HARL_HPP_
+# define _HARL_HPP_
 
-
-int main()
+class Harl
 {
-	Harl harl;
-	harl.complain("INFO");
-}
+	private:
+		void debug( void );
+		void info( void );
+		void warning( void );
+		void error( void );
+	public :
+		void complain( std::string level );
+};
+
+
+#endif
