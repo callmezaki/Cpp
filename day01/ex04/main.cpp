@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 14:33:31 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/08/21 17:43:02 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/08/23 22:01:07 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int main(int ac, char **av)
 	std::string name;
 	std::FILE * pFile;
 	
-	int i = 0;
 	if (ac == 4)
 	{
 		std::size_t len1;
@@ -52,7 +51,6 @@ int main(int ac, char **av)
 		while(found!=std::string::npos)
 		{
 			out = ft_replace(out,found, len1, std::string(av[3]));
-			// out.replace(found,len1,std::string(av[3]));
 			found = out.find(std::string(av[2]), found+1);
 		}
 		std::cout << out << std::endl;
