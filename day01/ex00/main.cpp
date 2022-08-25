@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 16:53:43 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/08/23 22:29:23 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/08/25 02:09:20 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 
 int main()
 {
-	Zombie *Boo;
-	Boo = newZombie("Boo");
-	Boo->announce();
-	delete Boo;
+	Zombie *Buu;
+	Buu = newZombie("Buu");
+	Buu->announce();
+	randomChump("1");
+	delete Buu;
 }

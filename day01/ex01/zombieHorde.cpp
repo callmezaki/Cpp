@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 21:37:37 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/08/18 22:01:07 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/08/24 22:00:12 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ Zombie* zombieHorde( int N, std::string name )
 		zz[i].setName(name);
 		zz[i].announce();
 	}
-	return(&zz[0]);
+	return(zz);
 }

@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 16:53:43 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/08/23 22:30:22 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/08/25 02:01:25 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 int main()
 {
-	zombieHorde( 10, "GG" );
+	Zombie *z = zombieHorde( 10, "GG" );
+	delete [] z;
 }
