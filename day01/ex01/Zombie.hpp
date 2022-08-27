@@ -6,9 +6,12 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 16:55:47 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/08/18 21:39:43 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/08/26 18:03:19 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef _ZOMBIE_HPP_
+# define _ZOMBIE_HPP_
 
 #include <cctype>
 #include <iostream>
@@ -27,3 +30,5 @@ class Zombie
 };
 
 Zombie* zombieHorde( int N, std::string name );
+
+#endif
