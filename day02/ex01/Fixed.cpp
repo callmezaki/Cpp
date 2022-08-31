@@ -6,11 +6,12 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 22:08:36 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/08/31 17:18:42 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/08/31 19:12:42 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cmath>
 #include "Fixed.hpp"
 
 const int Fixed::Fbits = 8;
@@ -24,7 +25,18 @@ Fixed::Fixed()
 Fixed::Fixed(Fixed const &a)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = a;
+	*this = a ;
+}
+
+Fixed::Fixed(const int a)
+{
+	std::cout << "Int constructor called" << std::endl;
+	FixedN = a<<8;
+}
+Fixed::Fixed(const float a)
+{
+	std::cout << "Float constructor called" << std::endl;
+	FixedN = roundf(a * 256);
 }
 
 Fixed::~Fixed()
@@ -41,7 +53,7 @@ Fixed& Fixed::operator=(const Fixed& t)
 
 int Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return FixedN;
 }
 
@@ -49,3 +61,19 @@ void Fixed::setRawBits( int const raw )
 {
 	FixedN = raw;
 }
+
+float Fixed::toFloat( void ) const
+{
+	return (float)FixedN / (256);
+}
+int Fixed::toInt( void ) const
+{
+	return FixedN>>8;
+}
+
+
+// friend std::ostream& Fixed::operator<<(std::ostream& os, const Fixed& f)
+// {
+
+// 	return os;
+// }
