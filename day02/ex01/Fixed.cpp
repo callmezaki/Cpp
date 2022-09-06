@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 22:08:36 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/08/31 19:12:42 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/09/06 16:29:40 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,14 @@ float Fixed::toFloat( void ) const
 {
 	return (float)FixedN / (256);
 }
+
 int Fixed::toInt( void ) const
 {
 	return FixedN>>8;
 }
 
-
-// friend std::ostream& Fixed::operator<<(std::ostream& os, const Fixed& f)
+// std::ostream& Fixed::operator<<(std::ostream& os, const Fixed& f)
 // {
-
+// 	os << f.toFloat();
 // 	return os;
 // }

@@ -1,6 +1,6 @@
 NAME = MySed
 
-CC = g++
+CC = c++
 
 OBJECTS = main.o 
 

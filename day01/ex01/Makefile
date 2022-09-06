@@ -1,6 +1,6 @@
 NAME = BraiiiiiiinnnzzzZ
 
-CC = g++
+CC = c++
 
 OBJECTS = main.o Zombie.o zombieHorde.o
 

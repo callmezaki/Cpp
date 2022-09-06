@@ -1,6 +1,6 @@
 NAME = Harl2.0
 
-CC = g++
+CC = c++
 
 OBJECTS = main.o Harl.o
 

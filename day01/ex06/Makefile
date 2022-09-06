@@ -1,6 +1,6 @@
 NAME = harlFilter
 
-CC = g++
+CC = c++
 
 OBJECTS = main.o Harl.o
 

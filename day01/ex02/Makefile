@@ -1,6 +1,6 @@
 NAME = HiBrain
 
-CC = g++
+CC = c++
 
 OBJECTS = main.o 
 
