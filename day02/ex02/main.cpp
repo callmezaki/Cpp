@@ -5,16 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 16:53:43 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/09 19:18:35 by zait-sli         ###   ########.fr       */
+/*   Created: 2022/08/29 22:25:11 by zait-sli          #+#    #+#             */
+/*   Updated: 2022/09/09 17:44:43 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
-int main()
-{
-	Zombie *z = zombieHorde( 10, "GG" );
-	delete [] z;
+
+int main( void ) {
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+
+	std::cout << b << std::endl;
+
+	std::cout << Fixed::max( a, b ) << std::endl;
+	return 0;
 }
