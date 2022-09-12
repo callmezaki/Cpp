@@ -5,18 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 22:25:11 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/12 19:09:59 by zait-sli         ###   ########.fr       */
+/*   Created: 2022/09/13 00:19:36 by zait-sli          #+#    #+#             */
+/*   Updated: 2022/09/13 00:49:29 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Point.hpp"
+#include "ClapTrap.hpp"
 
-
-int main( void ) 
+int main ()
 {
-	Point p(5,5), a(0,10) , b(10,0), c(10,10);
-	bsp(a,b,c,p);
-	return 0;
+	ClapTrap Zack("Zack"), Buu("Buu");
+
+	Zack.attack("Buu");
+	Buu.takeDamage(1);
 }

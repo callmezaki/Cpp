@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:43:14 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/12 00:51:04 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/09/12 17:52:49 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,68 +27,22 @@ class Fixed
 		~Fixed();
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
-		friend std::ostream& operator<<(std::ostream& os, const Fixed& f)
-		{
-			os << f.toFloat();
-			return os;
-		}
-		friend bool operator==(const Fixed& f, const Fixed& f1)
-		{
-			return (f.FixedN == f1.FixedN);
-		}
-		friend bool operator!=(const Fixed& f, const Fixed& f1)
-		{
-			return (f.FixedN != f1.FixedN);
-		}
-		friend bool operator<(const Fixed& f, const Fixed& f1)
-		{
-			return (f.FixedN < f1.FixedN);
-		}
-		friend bool operator>(const Fixed& f, const Fixed& f1)
-		{
-			return (f.FixedN > f1.FixedN);
-		}
-		friend bool operator<=(const Fixed& f, const Fixed& f1)
-		{
-			return (f.FixedN <= f1.FixedN);
-		}
-		friend bool operator>=(const Fixed& f, const Fixed& f1)
-		{
-			return (f.FixedN >= f1.FixedN);
-		}
-
-		friend Fixed operator+(const Fixed& f, const Fixed& f1)
-		{
-			Fixed temp;
-			temp.FixedN = f.FixedN + f1.FixedN;
-			return temp;
-		}
-		friend Fixed operator-(const Fixed& f, const Fixed& f1)
-		{
-			Fixed temp;
-			temp.FixedN = f.FixedN - f1.FixedN;
-			return temp;
-		}
-		friend Fixed operator*(const Fixed& f, const Fixed& f1)
-		{
-			Fixed temp;
-			temp.FixedN = f.FixedN * f1.FixedN;
-			temp.FixedN = temp.toFloat();
-			return temp;
-		}
-		friend Fixed operator/(const Fixed& f, const Fixed& f1)
-		{
-			Fixed temp;
-			temp.FixedN = f.FixedN * 256 / f1.FixedN * 256;
-			temp.FixedN = temp.toFloat();
-			return temp;
-		}
+		bool operator==(const Fixed& f);
+		bool operator!=(const Fixed& f);
+		bool operator<(const Fixed& f) const;
+		bool operator>(const Fixed& f) const;
+		bool operator<=(const Fixed& f);
+		bool operator>=(const Fixed& f);
+		Fixed operator+(const Fixed& f);
+		Fixed operator-(const Fixed& f) const;
+		Fixed operator*(const Fixed& f) const;
+		Fixed operator/(const Fixed& f);
 
 		static Fixed& min(Fixed& f,Fixed& f1);
 		static const Fixed& min(const Fixed& f, const Fixed& f1);
 		static Fixed& max(Fixed& f,Fixed& f1);
 		static const Fixed& max(const Fixed& f, const Fixed& f1);
-		
+
 		Fixed& operator++();
 		Fixed& operator--();
 		Fixed operator++(int);
@@ -98,4 +52,5 @@ class Fixed
 		int toInt( void ) const;
 };
 
+std::ostream& operator<<(std::ostream& os, const Fixed& f);
 #endif
