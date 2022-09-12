@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 00:03:29 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/08/26 20:09:15 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/09/10 21:42:00 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ HumanB::HumanB(std::string name)
 
 void HumanB::attack()
 {
-	if(Weapon)
-		std::cout << name << " attacks with their " << Weapon->getType() << std::endl;
+	if(weapon)
+		std::cout << name << " attacks with their " << weapon->getType() << std::endl;
 }
 
-void HumanB::setWeapon(class Weapon& Weapon)
+void HumanB::setWeapon(class Weapon& _weapon)
 {
-	this->Weapon = &Weapon;
+	weapon = &_weapon;
 }

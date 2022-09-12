@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 22:08:36 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/10 23:04:15 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/09/11 20:28:56 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,35 +18,35 @@ const int Fixed::Fbits = 8;
 
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 	FixedN = 0;
 }
 
 Fixed::Fixed(Fixed const &a)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	*this = a ;
 }
 
 Fixed::Fixed(const int a)
 {
-	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 	FixedN = a<<8;
 }
 Fixed::Fixed(const float a)
 {
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	FixedN = roundf(a * 256);
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
-Fixed& Fixed::operator=(const Fixed& t)
+Fixed& Fixed::operator=(const Fixed& t) 
 {
-	std::cout << "Copy assignment operator called " << std::endl;
+	// std::cout << "Copy assignment operator called " << std::endl;
 	this->FixedN = t.getRawBits();
 	return *this;
 }
@@ -72,8 +72,63 @@ int Fixed::toInt( void ) const
 	return FixedN>>8;
 }
 
-// std::ostream& Fixed::operator<<(std::ostream& os, const Fixed& f)
-// {
-// 	os << f.toFloat();
-// 	return os;
-// }
+Fixed& Fixed::operator++()
+{
+	++FixedN;
+	return *this;
+}
+
+Fixed& Fixed::operator--()
+{
+	--FixedN;
+	return *this;
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed temp(*this);
+
+	++(*this);
+
+	return temp;
+}
+Fixed Fixed::operator--(int)
+{
+	Fixed temp(*this);
+
+	--(*this);
+
+	return temp;
+}
+
+Fixed& Fixed::min(Fixed& f,Fixed& f1)
+{
+	if (f < f1)
+		return f;
+	else
+		return f1;
+	
+}
+const Fixed& Fixed::min(const Fixed& f, const Fixed& f1)
+{
+	if (f < f1)
+		return f;
+	else
+		return f1;
+}
+
+Fixed& Fixed::max(Fixed& f,Fixed& f1)
+{
+	if (f > f1)
+		return f;
+	else
+		return f1;
+	
+}
+const Fixed& Fixed::max(const Fixed& f, const Fixed& f1)
+{
+	if (f > f1)
+		return f;
+	else
+		return f1;
+}

@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/20 00:03:27 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/10 21:34:31 by zait-sli         ###   ########.fr       */
+/*   Created: 2022/09/11 18:48:07 by zait-sli          #+#    #+#             */
+/*   Updated: 2022/09/11 20:46:59 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _HUMANA_HPP_
-#define _HUMANA_HPP_
-
-#include <cctype>
+#ifndef _POINT_HPP_
+# define _POINT_HPP_
 #include <iostream>
-#include "Weapon.hpp"
+#include "Fixed.hpp"
 
-class HumanA
+class Point
 {
-	private :
-		std::string name;
-		Weapon &weapon;
-	public :
-		~HumanA();
-		HumanA(std::string name,Weapon& _weapon);
-		void attack(void);
+	private:
+		const Fixed x;
+		const Fixed y;
+	public:
+		Point();
+		Point(const Fixed _x,const Fixed _y);
+		Point(const Point& p);
+		Point& operator=(const Point& t);
+		~Point();
+		const Fixed getX() const;
+		const Fixed getY() const;
 };
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif

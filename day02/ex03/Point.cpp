@@ -1,37 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/20 00:02:37 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/10 16:38:45 by zait-sli         ###   ########.fr       */
+/*   Created: 2022/09/11 19:09:09 by zait-sli          #+#    #+#             */
+/*   Updated: 2022/09/11 20:47:14 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#include <iostream>
+#include "Fixed.hpp"
+#include "Point.hpp"
 
-int main()
+Point& Point::operator=(const Point& t)
 {
-	{
-		Weapon club = Weapon("crude spiked club");
+	(void)t;
+	return(*this);
+}
 
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
+Point::Point() : x(0) , y(0)
+{
+}
 
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	return 0;
+Point::Point(const Fixed _x,const Fixed _y) : x(_x), y(_y)
+{
+}
+
+Point::Point(const Point& p) : x(p.x), y(p.y)
+{
+}
+
+Point::~Point()
+{
+	
+}
+
+const Fixed Point::getX() const
+{
+	return x;
+}
+const Fixed Point::getY() const
+{
+	return(y);
 }

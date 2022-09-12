@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 14:33:31 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/08/27 01:47:29 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/09/10 19:29:27 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <stdio.h>
 
 
-std::string ft_replace(std::string out,std::size_t st, std::size_t old_len, std::string rep)
+std::string ftReplace(std::string out,std::size_t st, std::size_t old_len, std::string rep)
 {
 	std::string ret;
 	
@@ -26,7 +26,7 @@ std::string ft_replace(std::string out,std::size_t st, std::size_t old_len, std:
 }
 
 
-inline bool check_exist (const std::string& name) {
+bool checkExist (const std::string& name) {
     std::ifstream f(name.c_str());
     return f.good();
 }
@@ -63,7 +63,7 @@ int main(int ac, char **av)
 {
 	std::string out;
 	
-	if (ac == 4 && check_exist(std::string(av[1])))
+	if (ac == 4 && checkExist(std::string(av[1])))
 	{
 		std::size_t found;
 		std::size_t len1;
@@ -73,12 +73,12 @@ int main(int ac, char **av)
 		found = out.find(std::string(av[2]));
 		while(found!=std::string::npos)
 		{
-			out = ft_replace(out,found, len1, std::string(av[3]));
+			out = ftReplace(out,found, len1, std::string(av[3]));
 			found = out.find(std::string(av[2]), found+1);
 		}
 		writeToFile(out, av[1]);
 	}
-	else if (ac == 4 && !check_exist(std::string(av[1])))
+	else if (ac == 4 && !checkExist(std::string(av[1])))
 		std::cout << "file does not exist" << std::endl;
 	else
 		std::cout << "Wrong Number of args" << std::endl;

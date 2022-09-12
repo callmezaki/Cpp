@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 00:03:22 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/08/29 22:38:51 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/09/10 21:33:02 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,17 @@
 #include "HumanA.hpp"
 #include "Weapon.hpp"
 
-HumanA::HumanA()
-{
-	
-}
-
 HumanA::~HumanA()
 {
 	
 }
 
-HumanA::HumanA(std::string name, Weapon& weapon) 
+HumanA::HumanA(std::string name, Weapon& _weapon) : weapon(_weapon)
 {
 	this->name = name;
-	this->weapon = &weapon;
 }
 
 void HumanA::attack()
 {
-	std::cout << name << " attacks with their " << weapon->getType() << std::endl;
+	std::cout << name << " attacks with their " << weapon.getType() << std::endl;
 }

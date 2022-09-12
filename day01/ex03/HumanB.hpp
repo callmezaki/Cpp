@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 00:03:32 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/08/29 22:49:28 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/09/10 21:42:32 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 class HumanB
 {
 	private :
-		Weapon *Weapon;
+		Weapon *weapon;
 		std::string name;
 	public :
 		HumanB();
 		HumanB(std::string name);
 		~HumanB();
-		void setWeapon(class Weapon& Weapon);
+		void setWeapon(class Weapon&  _weapon);
 		void attack(void);
 };
 

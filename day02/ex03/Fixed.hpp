@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:43:14 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/10 16:46:07 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/09/12 00:51:04 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,8 @@ class Fixed
 		friend Fixed operator/(const Fixed& f, const Fixed& f1)
 		{
 			Fixed temp;
-			temp.FixedN = f.FixedN / f1.FixedN;
+			temp.FixedN = f.FixedN * 256 / f1.FixedN * 256;
+			temp.FixedN = temp.toFloat();
 			return temp;
 		}
 
