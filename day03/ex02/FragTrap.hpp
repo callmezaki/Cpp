@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 00:19:36 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/13 23:02:40 by zait-sli         ###   ########.fr       */
+/*   Created: 2022/09/14 04:37:05 by zait-sli          #+#    #+#             */
+/*   Updated: 2022/09/14 04:46:43 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "ClapTrap.hpp"
+#include<iostream>
+# include "ScavTrap.hpp"
 
-int main ()
+class FragTrap : public ScavTrap
 {
-	ClapTrap Zack("Zack"), Buu("Buu");
-	Zack.attack("Buu");
-	Buu.takeDamage(1);
-}
+	protected:
+		std::string	name;
+		int	HitPoints;
+		int	EnergyPoints;
+		int AttackDamage;
+	public :
+		FragTrap();
+		FragTrap(std::string n);
+		~FragTrap();
+		void highFivesGuys(void);
+		void attack(const std::string& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
+};

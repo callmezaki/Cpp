@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 22:55:51 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/09 00:53:45 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/09/13 22:03:32 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,6 @@ int main()
 	while(1)
 	{
 		std::cout << "Enter your cammand : ";
-		
 		if (!std::getline(std::cin,input))
 			exit(1);
 		if (!input.compare("ADD"))

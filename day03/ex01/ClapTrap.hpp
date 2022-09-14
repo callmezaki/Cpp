@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 00:19:36 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/13 23:02:40 by zait-sli         ###   ########.fr       */
+/*   Created: 2022/09/13 00:19:33 by zait-sli          #+#    #+#             */
+/*   Updated: 2022/09/14 04:35:16 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "ClapTrap.hpp"
 
-int main ()
+//relink
+
+class ClapTrap
 {
-	ClapTrap Zack("Zack"), Buu("Buu");
-	Zack.attack("Buu");
-	Buu.takeDamage(1);
-}
+	protected :
+		std::string	name;
+		int	HitPoints;
+		int	EnergyPoints;
+		int AttackDamage;
+	public :
+		ClapTrap();
+		ClapTrap(std::string n);
+		~ClapTrap();
+		void attack(const std::string& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
+};
+

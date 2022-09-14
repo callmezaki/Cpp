@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 00:19:31 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/13 22:07:35 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/09/14 01:46:08 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap() :  name(NULL), HitPoints(10), EnergyPoints(10),AttackDamage(10)
+ClapTrap::ClapTrap() :  HitPoints(10), EnergyPoints(10),AttackDamage(10)
 {
 
 }
@@ -46,7 +46,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (HitPoints && EnergyPoints)
 	{
-		std::cout << name << " has repaired " << amount << std::endl;
+		std::cout << "ClapTrap " << name << " has repaired " << amount << std::endl;
 		HitPoints += amount;
 		EnergyPoints--;
 	}
