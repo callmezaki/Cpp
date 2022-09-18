@@ -1,8 +1,9 @@
-NAME = Fixed0
+NAME = DiamondTrap
 
-CC = c++ -Wall -Wextra -Werror  -std=c++98
+CC = c++ 
 
-OBJECTS = main.o Fixed.o
+OBJECTS = main.o ClapTrap.o ScavTrap.o FragTrap.o DiamondTrap.o
+
 
 COLOR = \033[0;32m
 
@@ -15,10 +16,10 @@ all: $(NAME)
 # ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝╚═╝   ╚══════╝╚═╝  ╚═╝\n"
 
 $(NAME): $(OBJECTS)
-	@$(CC)  main.cpp Fixed.cpp -o $(NAME)
+	@$(CC) -Wall -Wextra -Werror  -std=c++98 main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp  -o $(NAME)
 
 %.o : %.cpp 
-	@$(CC) -c $<
+	@$(CC) -Wall -Wextra -Werror  -c $<
 clean:
 	@rm -rf $(OBJECTS) 
 

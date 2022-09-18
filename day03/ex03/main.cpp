@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 14:43:14 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/14 18:39:51 by zait-sli         ###   ########.fr       */
+/*   Created: 2022/09/13 00:19:36 by zait-sli          #+#    #+#             */
+/*   Updated: 2022/09/15 22:08:47 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _FIXED_HPP_
-# define _FIXED_HPP_
 #include <iostream>
+#include "DiamondTrap.hpp"
 
-class Fixed
+int main ()
 {
-	private :
-		int FixedN;
-		static const int Fbits;
-	public :
-		Fixed();
-		Fixed(Fixed const &a);
-		~Fixed();
-		int getRawBits( void ) const;
-		void setRawBits( int const raw );
-		Fixed& operator=(const Fixed& t);
-};
-
-#endif
+	DiamondTrap Zack("Zack");
+	Zack.attack("BY");
+}

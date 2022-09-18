@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 22:08:36 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/12 17:54:19 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/09/16 17:05:40 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ Fixed::Fixed(Fixed const &a)
 Fixed::Fixed(const int a)
 {
 	std::cout << "Int constructor called" << std::endl;
-	FixedN = a<<8;
+	FixedN = a<<Fbits;
 }
 Fixed::Fixed(const float a)
 {
 	std::cout << "Float constructor called" << std::endl;
-	FixedN = roundf(a * 256);
+	FixedN = roundf(a * (1<<Fbits));
 }
 
 Fixed::~Fixed()

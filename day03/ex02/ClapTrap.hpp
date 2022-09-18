@@ -6,13 +6,13 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 00:19:33 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/14 04:35:16 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/09/14 19:03:39 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef _ClapTRap_hpp_
+# define _ClapTRap_hpp_
 #include <iostream>
-
-//relink
 
 class ClapTrap
 {
@@ -30,3 +30,4 @@ class ClapTrap
 		void beRepaired(unsigned int amount);
 };
 
+#endif

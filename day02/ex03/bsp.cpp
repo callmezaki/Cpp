@@ -6,29 +6,13 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 20:41:47 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/12 01:19:10 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/09/16 19:15:10 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Fixed.hpp"
 #include "Point.hpp"
 #include <cstdlib>
-
-// class Node
-// {
-//   public:
-//     Fixed data;
-//     Node* left;
-//     Node* right;
-// 	Node(Fixed val)
-// {
-// 	data = val;
-
-// 	left = NULL;
-// 	right = NULL;
-// }
-// };
 
 Fixed getSarea(Point const a, Point const b, Point const c)
 {
@@ -46,7 +30,7 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
 	Fixed SArea = getSarea(a,b,c);
 	x = getSarea(point,b,c) + getSarea(a,point,c) + getSarea(a,b,point);
 	std::cout << SArea << std::endl;
-	std::cout << x << std::endl;
+	// std::cout << x << std::endl;
 	if (SArea == x)
 		return 1;
 	else
