@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:43:14 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/12 17:52:49 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/11/25 17:32:18 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Fixed
 		~Fixed();
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
-		bool operator==(const Fixed& f);
+		bool operator==(const Fixed& f) const;
 		bool operator!=(const Fixed& f);
 		bool operator<(const Fixed& f) const;
 		bool operator>(const Fixed& f) const;

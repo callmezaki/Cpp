@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 19:09:09 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/11 20:47:14 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/11/25 18:37:03 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ Point::Point(const Point& p) : x(p.x), y(p.y)
 
 Point::~Point()
 {
-	
 }
 
 const Fixed Point::getX() const

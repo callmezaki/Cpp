@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 22:08:36 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/16 18:36:01 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/11/27 16:37:59 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,42 +18,42 @@ const int Fixed::Fbits = 8;
 
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 	FixedN = 0;
 }
 
 Fixed::Fixed(Fixed const &a)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	*this = a ;
 }
 
 Fixed::Fixed(const int a)
 {
-	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 	FixedN = a<<Fbits;
 }
 Fixed::Fixed(const float a)
 {
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	FixedN = roundf(a * (1<<Fbits));
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed& t) 
 {
-	std::cout << "Copy assignment operator called " << std::endl;
+	// std::cout << "Copy assignment operator called " << std::endl;
 	this->FixedN = t.getRawBits();
 	return *this;
 }
 
 int Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return FixedN;
 }
 
@@ -69,7 +69,7 @@ float Fixed::toFloat( void ) const
 
 int Fixed::toInt( void ) const
 {
-	return FixedN>>8;
+	return FixedN>>Fbits;
 }
 
 Fixed& Fixed::operator++()
@@ -88,7 +88,7 @@ Fixed Fixed::operator++(int)
 {
 	Fixed temp(*this);
 
-	++(*this);
+	++FixedN;
 
 	return temp;
 }
@@ -96,7 +96,7 @@ Fixed Fixed::operator--(int)
 {
 	Fixed temp(*this);
 
-	--(*this);
+	--FixedN;
 
 	return temp;
 }

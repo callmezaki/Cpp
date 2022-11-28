@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 20:41:47 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/16 19:15:10 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/11/25 19:12:00 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ Fixed getSarea(Point const a, Point const b, Point const c)
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
-	(void)point;
-	Fixed x;
+	Fixed t1, t2, t3;
 	Fixed SArea = getSarea(a,b,c);
-	x = getSarea(point,b,c) + getSarea(a,point,c) + getSarea(a,b,point);
-	std::cout << SArea << std::endl;
-	// std::cout << x << std::endl;
-	if (SArea == x)
-		return 1;
-	else
+
+	t1 = getSarea(point,b,c);
+	t2 = getSarea(a,point,c);
+	t3 = getSarea(a,b,point);
+	if (SArea != (t1 + t2 + t3) || t1 == 0 || t2 == 0 || t3 == 0)
 		return 0;
+	else
+		return 1;
 }
