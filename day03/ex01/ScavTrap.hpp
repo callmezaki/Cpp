@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 23:03:21 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/14 19:06:32 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/03 16:13:59 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,14 @@
 
 class ScavTrap : public ClapTrap
 {
-	protected:
-		std::string	name;
-		int	HitPoints;
-		int	EnergyPoints;
-		int AttackDamage;
 	public :
 		ScavTrap();
 		ScavTrap(std::string n);
 		~ScavTrap();
-		void guardGate(void);
+		ScavTrap& operator=(const ScavTrap& Scav);
 		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		void guardGate(void);
+
 };
 
 #endif

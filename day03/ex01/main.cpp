@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 00:19:36 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/14 01:43:41 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/04 21:12:34 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 int main ()
 {
-	ScavTrap Zack("Zack") , Buu("Buu");
-	Zack.attack("Buu");
+	ClapTrap * Zack = new ScavTrap("Zack");
+	ScavTrap Buu("Buu");
+	Zack->attack("Buu");
 	Buu.takeDamage(10);
 	Buu.beRepaired(10);
+	delete Zack;
 }

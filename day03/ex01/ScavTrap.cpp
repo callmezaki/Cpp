@@ -6,25 +6,42 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 23:02:48 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/14 04:45:45 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/04 21:08:23 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() :  HitPoints(100), EnergyPoints(50),AttackDamage(20)
+ScavTrap::ScavTrap() : ClapTrap()
 {
+	std::cout << "ScavTrap Default Constucter called" << std::endl;
+	ClapTrap::HitPoints = 100;
+	ClapTrap::EnergyPoints = 50;
+	ClapTrap::AttackDamage = 20;
+}
 
-}
-ScavTrap::ScavTrap(std::string n) : HitPoints(100), EnergyPoints(50),AttackDamage(20)
+ScavTrap::ScavTrap(std::string n) 
 {
-	name = n;
+	std::cout << "ScavTrap Copy Constucter called" << std::endl;
+	ClapTrap::name = n;	
+	ClapTrap::HitPoints = 100;
+	ClapTrap::EnergyPoints = 50;
+	ClapTrap::AttackDamage = 20;
 }
+
 ScavTrap::~ScavTrap() 
 {
-	
+	std::cout << "ScavTrap Destucter called" << std::endl;
 }
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& Scav)
+{
+	std::cout << "ScavTrap Copy assignment operator called " << std::endl;
+	this->name = Scav.name;
+	return *this;
+}
+
 void ScavTrap::attack(const std::string& target)
 {
 	if (HitPoints && EnergyPoints)
@@ -35,22 +52,6 @@ void ScavTrap::attack(const std::string& target)
 	else
 		std::cout << "ScavTrap " << name << " Has no HitPoints or EnergyPoints" << std::endl;
 		
-}
-void ScavTrap::takeDamage(unsigned int amount)
-{
-	std::cout << "ScavTrap " << name << " has taken a dommage of " << amount << std::endl;
-	HitPoints -= amount;
-}
-void ScavTrap::beRepaired(unsigned int amount)
-{
-	if (HitPoints && EnergyPoints)
-	{
-		std::cout << "ScavTrap " << name << " has repaired " << amount << std::endl;
-		HitPoints += amount;
-		EnergyPoints--;
-	}
-	else
-		std::cout << "ScavTrap " << name << " Has no HitPoints or EnergyPoints" << std::endl;
 }
 
 void ScavTrap::guardGate()

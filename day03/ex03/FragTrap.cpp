@@ -6,52 +6,40 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 04:37:02 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/15 22:10:58 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/01 20:43:22 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<iostream>
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() :  HitPoints(100), EnergyPoints(100),AttackDamage(30)
+FragTrap::FragTrap()
 {
-
+	std::cout << "FragTrap Default Constucter called" << std::endl;
+	ClapTrap::HitPoints = 100;
+	ClapTrap::EnergyPoints = 100;
+	ClapTrap::AttackDamage = 30;
 }
-FragTrap::FragTrap(std::string n) : HitPoints(100), EnergyPoints(100),AttackDamage(30)
+FragTrap::FragTrap(std::string n)
 {
-	name = n;
+	std::cout << "FragTrap Copy Constucter called" << std::endl;
+	ClapTrap::name = n;
+	ClapTrap::HitPoints = 100;
+	ClapTrap::EnergyPoints = 100;
+	ClapTrap::AttackDamage = 30;
 }
 FragTrap::~FragTrap() 
 {
-	
+	std::cout << "FragTrap Destucter called" << std::endl;
 }
-void FragTrap::attack(const std::string& target)
+
+FragTrap& FragTrap::operator=(const FragTrap& Frag)
 {
-	if (HitPoints && EnergyPoints)
-	{
-		std::cout << "FragTrap " << name << " Attacks " << target << " causing "<< AttackDamage <<" points of damage!" << std::endl;
-		EnergyPoints--;
-	}
-	else
-		std::cout << "FragTrap " << name << " Has no HitPoints or EnergyPoints" << std::endl;
-		
+	std::cout << "FragTrap Copy assignment operator called " << std::endl;
+	this->name = Frag.name;
+	return *this;
 }
-void FragTrap::takeDamage(unsigned int amount)
-{
-	std::cout << "FragTrap " << name << " has taken a dommage of " << amount << std::endl;
-	HitPoints -= amount;
-}
-void FragTrap::beRepaired(unsigned int amount)
-{
-	if (HitPoints && EnergyPoints)
-	{
-		std::cout << "FragTrap " << name << " has repaired " << amount << std::endl;
-		HitPoints += amount;
-		EnergyPoints--;
-	}
-	else
-		std::cout << "FragTrap " << name << " Has no HitPoints or EnergyPoints" << std::endl;
-}
+
 void FragTrap::highFivesGuys(void)
 {
 	std::cout << "FragTrap " << name << " is requesting a positive high fives" << std::endl;

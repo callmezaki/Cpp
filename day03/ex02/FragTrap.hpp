@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 04:37:05 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/14 19:08:14 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/01 20:34:31 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,15 @@
 #include<iostream>
 # include "ScavTrap.hpp"
 
-class FragTrap : public ScavTrap
+class FragTrap : public ClapTrap
 {
-	protected:
-		std::string	name;
-		int	HitPoints;
-		int	EnergyPoints;
-		int AttackDamage;
+
 	public :
 		FragTrap();
 		FragTrap(std::string n);
 		~FragTrap();
+		FragTrap& operator=(const FragTrap& Frag);
 		void highFivesGuys(void);
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
 };
 
 #endif

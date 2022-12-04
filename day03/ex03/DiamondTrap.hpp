@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 18:58:48 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/09/16 03:11:58 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/01 20:37:10 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define __DIAMONDTRAP__HPP_
 #include "FragTrap.hpp"
 
-class DiamondTrap : public FragTrap
+class DiamondTrap : public FragTrap, public ScavTrap 
 {
 	private :
 		std::string	name;
@@ -24,10 +24,9 @@ class DiamondTrap : public FragTrap
 	public :
 		DiamondTrap();
 		DiamondTrap(std::string n);
+		DiamondTrap& operator=(const DiamondTrap& Diamond);
 		~DiamondTrap();
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		void whoAmI();
 };
 
 #endif
