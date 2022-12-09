@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 23:02:48 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/01 20:43:55 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/09 00:28:32 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,24 @@
 ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "ScavTrap Default Constucter called" << std::endl;
-	ClapTrap::HitPoints = 100;
-	ClapTrap::EnergyPoints = 50;
-	ClapTrap::AttackDamage = 20;
+	HitPoints = 100;
+	EnergyPoints = 50;
+	AttackDamage = 20;
 }
 
 ScavTrap::ScavTrap(std::string n) 
 {
+	std::cout << "ScavTrap String Constucter called" << std::endl;
+	name = n;	
+	HitPoints = 100;
+	EnergyPoints = 50;
+	AttackDamage = 20;
+}
+
+ScavTrap::ScavTrap(ScavTrap& Scav) 
+{
 	std::cout << "ScavTrap Copy Constucter called" << std::endl;
-	ClapTrap::name = n;	
-	ClapTrap::HitPoints = 100;
-	ClapTrap::EnergyPoints = 50;
-	ClapTrap::AttackDamage = 20;
+	*this = Scav;
 }
 
 ScavTrap::~ScavTrap() 
@@ -38,7 +44,10 @@ ScavTrap::~ScavTrap()
 ScavTrap& ScavTrap::operator=(const ScavTrap& Scav)
 {
 	std::cout << "ScavTrap Copy assignment operator called " << std::endl;
-	this->name = Scav.name;
+	name = Scav.name;
+	HitPoints = Scav.HitPoints;
+	EnergyPoints = Scav.EnergyPoints;
+	AttackDamage = Scav.AttackDamage;
 	return *this;
 }
 

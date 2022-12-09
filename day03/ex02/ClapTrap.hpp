@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 00:19:33 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/01 20:20:37 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/09 00:19:07 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class ClapTrap
 	public :
 		ClapTrap();
 		ClapTrap(std::string n);
+		ClapTrap(ClapTrap& Clap);
 		~ClapTrap();
 		ClapTrap& operator=(const ClapTrap& Clap);
 		void attack(const std::string& target);

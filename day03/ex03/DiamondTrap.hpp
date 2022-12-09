@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 18:58:48 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/01 20:37:10 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/09 00:09:01 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class DiamondTrap : public FragTrap, public ScavTrap
 	public :
 		DiamondTrap();
 		DiamondTrap(std::string n);
+		DiamondTrap(DiamondTrap& Diamond);
 		DiamondTrap& operator=(const DiamondTrap& Diamond);
 		~DiamondTrap();
 		void whoAmI();

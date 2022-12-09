@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 00:19:31 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/04 23:08:22 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/09 00:16:48 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,16 @@ ClapTrap::~ClapTrap()
 ClapTrap::ClapTrap(ClapTrap& Clap)
 {
 	std::cout << "ClapTrap Copy Constucter called" << std::endl;
-	
+	*this = Clap;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& Clap)
 {
 	std::cout << "ClapTrap Copy assignment operator called " << std::endl;
-	this->name = Clap.name;
+	name = Clap.name;
+	HitPoints = Clap.HitPoints;
+	EnergyPoints = Clap.EnergyPoints;
+	AttackDamage = Clap.AttackDamage;
 	return *this;
 }
 
@@ -53,11 +56,18 @@ void ClapTrap::attack(const std::string& target)
 		std::cout << "ClapTrap " << name << " Has no HitPoints or EnergyPoints" << std::endl;
 		
 }
+
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "ClapTrap " << name << " has taken a dommage of " << amount << std::endl;
-	HitPoints -= amount;
+	if (HitPoints && EnergyPoints)
+	{
+		std::cout << "ClapTrap " << name << " has taken a dommage of " << amount << std::endl;
+		HitPoints -= amount;
+	}
+	else
+		std::cout << "ClapTrap " << name << " Has no HitPoints or EnergyPoints" << std::endl;
 }
+
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (HitPoints && EnergyPoints)

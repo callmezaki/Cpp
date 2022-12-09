@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 23:03:21 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/04 23:29:30 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/09 00:30:18 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ class ScavTrap : virtual public ClapTrap
 	public :
 		ScavTrap();
 		ScavTrap(std::string n);
+		ScavTrap(ScavTrap& Scav);
 		~ScavTrap();
 		ScavTrap& operator=(const ScavTrap& Scav);
-		void guardGate(void);
 		void attack(const std::string& target);
+		void guardGate(void);
 };
 
 #endif
