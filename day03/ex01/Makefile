@@ -1,6 +1,6 @@
 NAME = ScavTrap
 
-CC = c++ -g
+CC = c++ -Wall -Wextra -Werror  -std=c++98
 
 OBJECTS = main.o ClapTrap.o ScavTrap.o
 
@@ -16,7 +16,7 @@ all: $(NAME)
 # ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝╚═╝   ╚══════╝╚═╝  ╚═╝\n"
 
 $(NAME): $(OBJECTS)
-	@$(CC) -Wall -Wextra -Werror  -std=c++98 main.cpp ClapTrap.cpp ScavTrap.cpp -I Scavtrap   -o $(NAME)
+	@$(CC)  main.cpp ClapTrap.cpp ScavTrap.cpp -I Scavtrap   -o $(NAME)
 
 %.o : %.cpp 
 	@$(CC) -Wall -Wextra -Werror  -c $<

@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 00:19:36 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/09 01:05:01 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/11 19:50:02 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main ()
 {
 	FragTrap Zack("Zack") , Buu("Buu");
 	Zack.attack("Buu");
-	Buu.takeDamage(10);
-	Buu.beRepaired(10);
+	Buu.takeDamage(30);
+	Buu.beRepaired(30);
 	Buu.highFivesGuys();
 }

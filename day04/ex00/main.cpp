@@ -5,20 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 00:19:36 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/11 21:27:49 by zait-sli         ###   ########.fr       */
+/*   Created: 2022/12/12 01:02:35 by zait-sli          #+#    #+#             */
+/*   Updated: 2022/12/13 11:43:54 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "DiamondTrap.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-int main ()
+int main (void)
 {
-	DiamondTrap Zack("Zack") , Buu("Buu");
-	Zack.attack("Buu");
-	Zack.guardGate();
-	Zack.whoAmI();
-	Buu.takeDamage(20);
-	Buu.highFivesGuys();
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	const WrongAnimal* w = new WrongCat();
+
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	std::cout << w->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+	w->makeSound();
+
+	delete i;
+	delete j;
+	delete meta;
+	delete w;
+
+	return 0;
 }

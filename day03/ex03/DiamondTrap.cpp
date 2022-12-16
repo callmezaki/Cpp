@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 18:58:43 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/09 00:11:47 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/09 01:15:07 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& Diamond)
 {
 	std::cout << "DiamondTrap Copy assignment operator called " << std::endl;
 	name = Diamond.name;
-	ClapTrap::name = Diamond.name + + "_clap_name";
+	ClapTrap::name = Diamond.name + "_clap_name";
 	HitPoints = Diamond.HitPoints;
 	EnergyPoints = Diamond.EnergyPoints;
 	AttackDamage = Diamond.AttackDamage;

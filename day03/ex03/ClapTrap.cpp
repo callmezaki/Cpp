@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 00:19:31 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/09 01:04:52 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/11 19:37:02 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (HitPoints && EnergyPoints)
 	{
-		std::cout << name << " has repaired " << amount << std::endl;
+		std::cout << "ClapTrap " << name << " has repaired " << amount << std::endl;
 		HitPoints += amount;
 		EnergyPoints--;
 	}

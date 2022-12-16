@@ -8,7 +8,7 @@
 			"type": "lldb",
 			"request": "launch",
 			"name": "Debug",
-			"program": "/Users/zait-sli/Desktop/Cpp/day03/ex01/ScavTrap",
+			"program": "/Users/zait-sli/Desktop/Cpp/day04/ex01/Animal",
 			"args": [],
 			"cwd": "${workspaceFolder}"
 		}
