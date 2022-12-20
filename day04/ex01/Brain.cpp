@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 11:49:47 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/16 08:39:39 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/19 12:15:05 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Brain::Brain()
 
 Brain::Brain(const Brain &copy)
 {
-	(void) copy;
+	*this = copy;
 	std::cout << "\e[0;33mCopy Constructor called of Brain\e[0m" << std::endl;
 }
 

@@ -1,8 +1,8 @@
-NAME = Animal
+NAME = Bureaucrat
 
 CC = c++ -Wall -Wextra -Werror  -std=c++98 
 
-OBJECTS = main.o Animal.o Dog.o Cat.o Brain.o
+OBJECTS = main.o Bureaucrat.o
 
 
 COLOR = \033[0;32m
@@ -10,7 +10,7 @@ COLOR = \033[0;32m
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	@$(CC) main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp  -o $(NAME)
+	@$(CC) main.cpp Bureaucrat.cpp -o $(NAME)
 
 %.o : %.cpp 
 	@$(CC) -c $<

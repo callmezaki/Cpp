@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 11:32:40 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/13 11:38:52 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/19 13:11:09 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ WrongAnimal::WrongAnimal()
 
 WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
-	(void) copy;
+	*this = copy;
 	std::cout << "\e[0;33mCopy Constructor called of WrongAnimal\e[0m" << std::endl;
 }
 
@@ -35,7 +35,7 @@ WrongAnimal::~WrongAnimal()
 // Operators
 WrongAnimal & WrongAnimal::operator=(const WrongAnimal &assign)
 {
-	(void) assign;
+	type = assign.type;;
 	return *this;
 }
 

@@ -6,32 +6,34 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 01:02:35 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/16 10:52:09 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/19 12:23:07 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongCat.hpp"
 
 int main (void)
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	const WrongAnimal* w = new WrongCat();
+	const Animal* meta[4];
+	for (int i = 0; i < 2; i++)
+		meta[i] = new Cat;
+	for (int i = 2; i < 4; i++)
+		meta[i] = new Dog;
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << w->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	w->makeSound();
-	delete i;
-	delete j;
-	delete meta;
-	delete w;
+	std::cout << std::endl;
 
+	Dog dog;
+	{
+		Dog test;
+		test = dog;
+	}
+	
+	std::cout << std::endl;
+
+	for (int i = 0; i < 4; i++)
+		delete meta[i];
+
+	std::cout << std::endl;
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 00:58:53 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/12 01:27:47 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/19 12:14:25 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Dog::Dog()
 
 Dog::Dog(const Dog &copy)
 {
-	(void) copy;
+	*this = copy;
 	std::cout << "\e[0;33mCopy Constructor called of Dog\e[0m" << std::endl;
 }
 
@@ -37,7 +37,7 @@ Dog::~Dog()
 // Operators
 Dog & Dog::operator=(const Dog &assign)
 {
-	(void) assign;
+	type = assign.type;
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 00:58:53 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/16 10:32:13 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/17 18:41:54 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Dog & Dog::operator=(const Dog &assign)
 	std::cout << "\e[0;33mCopy Assignment oprator called of Dog\e[0m" << std::endl;
 	if (Brain)
 		delete  Brain;
-	Brain = new class Brain;
+	Brain = new class Brain();
 	*Brain = *assign.Brain;
 	return *this;
 }

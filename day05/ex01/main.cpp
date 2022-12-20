@@ -1,30 +1,30 @@
-/* ************************************************************************** */
+	/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 01:02:35 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/19 12:25:59 by zait-sli         ###   ########.fr       */
+/*   Created: 2022/12/19 18:15:46 by zait-sli          #+#    #+#             */
+/*   Updated: 2022/12/19 22:34:05 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+// #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-int main (void)
+int main()
 {
-	// const Animal* h = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	delete i;
-	delete j;
-
-	return 0;
+	try 
+	{
+		Bureaucrat kayed("kayed",10);
+		std::cout << kayed << std::endl;
+		Form F("Extree",1,1);
+		std::cout << F << std::endl;
+		F.beSigned(kayed);
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
 }
+

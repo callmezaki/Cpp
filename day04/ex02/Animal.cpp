@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 00:58:34 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/16 10:53:17 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/19 12:20:07 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Animal::Animal()
 
 Animal::Animal(const Animal &copy)
 {
-	(void) copy;
+	*this = copy;
 	std::cout << "\e[0;33mCopy Constructor called of Animal\e[0m" << std::endl;
 }
 
@@ -36,7 +36,7 @@ Animal::~Animal()
 // Operators
 Animal & Animal::operator=(const Animal &assign)
 {
-	(void) assign;
+	type = assign.type;
 	return *this;
 }
 

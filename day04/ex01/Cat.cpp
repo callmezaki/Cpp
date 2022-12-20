@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 00:58:44 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/16 10:35:16 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/19 13:07:11 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Cat::Cat()
 
 Cat::Cat(const Cat &copy)
 {
-	(void) copy;
+	*this = copy;
 	std::cout << "\e[0;33mCopy Constructor called of Cat\e[0m" << std::endl;
 }
 
@@ -41,7 +41,7 @@ Cat & Cat::operator=(const Cat &assign)
 	std::cout << "\e[0;33mCopy Assignment oprator called of Cat\e[0m" << std::endl;
 	if (Brain)
 		delete  Brain;
-	Brain = new class Brain;
+	Brain = new class Brain();
 	*Brain = *assign.Brain;
 	return *this;
 }
