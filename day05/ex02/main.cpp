@@ -12,33 +12,20 @@
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
 	try 
 	{
-		Bureaucrat kayed("kayed",10);
-		std::cout << kayed << std::endl;
-		// AForm F("Extree",1,1);
-		// std::cout << F << std::endl;
-		// F.beSigned(kayed);
+		// Bureaucrat kayed("kayed",10);
+		// std::cout << kayed << std::endl;
+		ShrubberyCreationForm g("hhhh");
+		// g.beSigned(kayed);
 	}
 	catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 
-	// std::cout << std::endl;
-
-	// try 
-	// {
-	// 	Bureaucrat Bacha("Bacha",1);
-	// 	std::cout << Bacha << std::endl;
-	// 	Form F("Extree",1,1);
-	// 	std::cout << F << std::endl;
-	// 	F.beSigned(Bacha);
-	// }
-	// catch (std::exception &e) {
-	// 	std::cerr << e.what() << std::endl;
-	// }
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 16:01:57 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/21 16:18:44 by marvin           ###   ########.fr       */
+/*   Updated: 2022/12/22 13:40:34 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class AForm
 		AForm(const AForm &copy);
 		
 		// Destructor
-		~AForm();
+		virtual ~AForm();
 
 		class GradeTooLowException : public std::exception
 		{
@@ -55,7 +55,8 @@ class AForm
 		int getGtoSign(void) const;
 		int getGtoExecute(void) const;
 		bool  getSigned(void) const;
-		virtual void beSigned(const class Bureaucrat &Bu) = 0;
+		void  setSigned(bool s);
+		virtual void beSigned(const class Bureaucrat &Bu) const = 0;
 				
 };
 
