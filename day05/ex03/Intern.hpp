@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 11:06:13 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/24 15:52:35 by zait-sli         ###   ########.fr       */
+/*   Created: 2022/12/24 20:30:13 by zait-sli          #+#    #+#             */
+/*   Updated: 2022/12/24 20:33:17 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFORM_HPP
-# define PRESIDENTIALPARDONFORM_HPP
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
 # include <iostream>
 # include <string>
 # include "AForm.hpp"
 
-class PresidentialPardonForm : public AForm
+class Intern
 {
-	private:
-		std::string target;
 	public:
 		// Constructors
-		PresidentialPardonForm();
-		PresidentialPardonForm(const PresidentialPardonForm &copy);
-		PresidentialPardonForm(const std::string &target);
+		Intern();
+		Intern(const Intern &copy);
 		
 		// Destructor
-		~PresidentialPardonForm();
+		~Intern();
 		
 		// Operators
-		PresidentialPardonForm & operator=(const PresidentialPardonForm &assign);
-		void  execute(Bureaucrat const & executor) const;
-		
-		
+		Intern & operator=(const Intern &assign);
+		AForm *makeForm(std::string form, std::string target);
 };
 
 #endif
