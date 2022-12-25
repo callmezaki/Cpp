@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 18:08:54 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/24 20:27:30 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/25 12:45:43 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void Bureaucrat::decrementGrade(void)
 	grade++;
 }
 
-void Bureaucrat::signForm(const class AForm &F) const
+void Bureaucrat::signForm(const class Form &F) const
 {
 	if (F.getGtoSign() >= grade && !F.getSigned())
 	{
@@ -92,7 +92,7 @@ void Bureaucrat::signForm(const class AForm &F) const
 		
 }
 
-void Bureaucrat::executeForm(AForm const & form)
+void Bureaucrat::executeForm(Form const & form)
 {
 	if (form.getGtoExecute() >= grade && form.getSigned())
 	{

@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:06:19 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/24 17:44:55 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/25 20:29:32 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ RobotomyRequestForm::RobotomyRequestForm()
 	std::cout << "\e[0;33mDefault Constructor called of RobotomyRequestForm\e[0m" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("RobotomyRequest", 72,45)
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : Form("RobotomyRequest", 72,45)
 {
 	this->target = target;
 	std::cout << "\e[0;33mString Constructor called of RobotomyRequestForm\e[0m" << std::endl;
@@ -47,7 +47,7 @@ void  RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	if(getSigned() && executor.getGrade() <= getGtoExecute())
 	{
-		std::cout << "Piip " << std::endl;
+		std::cout << "Dzzzzz ,";
 		srand(time(0));
 		if (rand() % 2)
 		{

@@ -22,10 +22,10 @@ int main()
 	{
 		Bureaucrat kayed("kayed",10);
 		std::cout << kayed << std::endl;
-		ShrubberyCreationForm g("hhhh");
-		g.beSigned(kayed);
-		std::cout << g << std::endl;
-		g.execute(kayed);
+		ShrubberyCreationForm Shrubbery("house");
+		Shrubbery.beSigned(kayed);
+		std::cout << Shrubbery << std::endl;
+		kayed.executeForm(Shrubbery);
 	}
 	catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
@@ -37,10 +37,10 @@ int main()
 	{
 		Bureaucrat kayed("kayed",10);
 		std::cout << kayed << std::endl;
-		PresidentialPardonForm g("hhhh");
-		g.beSigned(kayed);
-		std::cout << g << std::endl;
-		g.execute(kayed);
+		PresidentialPardonForm Pres("L3afw");
+		Pres.beSigned(kayed);
+		std::cout << Pres << std::endl;
+		kayed.executeForm(Pres);
 	}
 	catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
@@ -52,7 +52,7 @@ int main()
 	{
 		Bureaucrat kayed("kayed",10);
 		std::cout << kayed << std::endl;
-		RobotomyRequestForm g("hhhh");
+		RobotomyRequestForm g("Robot");
 		g.beSigned(kayed);
 		std::cout << g << std::endl;
 		kayed.executeForm(g);

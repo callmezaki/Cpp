@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 20:30:13 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/24 20:33:17 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/25 13:52:53 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <iostream>
 # include <string>
 # include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 class Intern
 {
@@ -29,7 +32,14 @@ class Intern
 		
 		// Operators
 		Intern & operator=(const Intern &assign);
-		AForm *makeForm(std::string form, std::string target);
+		Form *makeForm(std::string form, std::string target);
+		class formDoesNotExist : public std::exception
+		{
+			public:
+				const char * what() const throw(){
+					return ("Form does not exist");
+				}
+		}	;
 };
 
 #endif

@@ -18,7 +18,7 @@ ShrubberyCreationForm::ShrubberyCreationForm()
 	std::cout << "\e[0;33mDefault Constructor called of ShrubberyCreationForm\e[0m" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreation", 145,137)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : Form("ShrubberyCreation", 145,137)
 {
 	this->target = target;
 	std::cout << "\e[0;33mString Constructor called of ShrubberyCreationForm\e[0m" << std::endl;
@@ -54,7 +54,22 @@ void  ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		name = target + "_shrubbery";
 		pFile = fopen (name.c_str(),"w");
 		std::ofstream file(name);
-		file << "ASCII trees";
+		file << "         /*\\\n";
+		file << "        /***\\\n";
+		file << "       /*****\\\n";
+		file << "      /*******\\\n";
+		file << "     /*********\\\n";
+		file << "    /***********\\\n";
+		file << "   /*************\\\n";
+		file << "  /***************\\\n";
+		file << " /*****************\\\n";
+		file << "/*******************\\\n";
+		file << "---------------------\n";
+		file << "         |*|\n";
+		file << "         |*|\n";
+		file << "         |*|\n";
+		file << "     |*********|\n";
+		file << "     |---------|\n";
 		file.close();
 	}
 }

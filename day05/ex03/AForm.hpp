@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 16:01:57 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/24 15:44:17 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/25 12:45:43 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string>
 #include "Bureaucrat.hpp"
 
-class AForm
+class Form
 {
 	private:
 		const std::string name;
@@ -26,12 +26,12 @@ class AForm
 		const int gtoExecute;
 	public:
 		// Constructors
-		AForm();
-		AForm(const std::string Name,const int GtoSign, const int GtoExecute);
-		AForm(const AForm &copy);
+		Form();
+		Form(const std::string Name,const int GtoSign, const int GtoExecute);
+		Form(const Form &copy);
 		
 		// Destructor
-		virtual ~AForm();
+		virtual ~Form();
 
 		class GradeTooLowException : public std::exception
 		{
@@ -50,7 +50,7 @@ class AForm
 		}	;	
 		
 		// Operators
-		AForm & operator=(const AForm &assign);
+		Form & operator=(const Form &assign);
 		std::string  getName(void) const;
 		int getGtoSign(void) const;
 		int getGtoExecute(void) const;
@@ -60,6 +60,6 @@ class AForm
 				
 };
 
-std::ostream& operator<<(std::ostream& os, const AForm& b);
+std::ostream& operator<<(std::ostream& os, const Form& b);
 
 #endif

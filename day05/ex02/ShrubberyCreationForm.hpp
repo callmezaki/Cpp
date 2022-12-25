@@ -18,7 +18,7 @@
 #include <fstream>
 # include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm
+class ShrubberyCreationForm : public Form
 {
 	private:
 		std::string target; 

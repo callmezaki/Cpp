@@ -2,7 +2,7 @@ NAME = Bureaucrat
 
 CC = c++ -Wall -Wextra -Werror  -std=c++98 
 
-OBJECTS = main.o Bureaucrat.o AForm.o ShrubberyCreationForm.o RobotomyRequestForm.o PresidentialPardonForm.o
+OBJECTS = main.o Bureaucrat.o AForm.o ShrubberyCreationForm.o RobotomyRequestForm.o PresidentialPardonForm.o Intern.o
 
 
 COLOR = \033[0;32m
@@ -10,7 +10,7 @@ COLOR = \033[0;32m
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	@$(CC) main.cpp Bureaucrat.cpp  AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp -o $(NAME)
+	@$(CC) main.cpp Bureaucrat.cpp  AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp -o $(NAME)
 
 %.o : %.cpp 
 	@$(CC) -c $<

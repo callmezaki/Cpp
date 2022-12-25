@@ -15,50 +15,24 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
 	try 
 	{
 		Bureaucrat kayed("kayed",10);
+		Intern in;
 		std::cout << kayed << std::endl;
-		ShrubberyCreationForm g("hhhh");
-		g.beSigned(kayed);
-		std::cout << g << std::endl;
-		g.execute(kayed);
+		Form *form;
+		form = in.makeForm("robotomy r","house");
+		form->beSigned(kayed);
+		kayed.executeForm(*form);
+		delete form;
 	}
 	catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 
-	std::cout << std::endl;
-
-	try 
-	{
-		Bureaucrat kayed("kayed",10);
-		std::cout << kayed << std::endl;
-		PresidentialPardonForm g("hhhh");
-		g.beSigned(kayed);
-		std::cout << g << std::endl;
-		g.execute(kayed);
-	}
-	catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-	}
-
-	std::cout << std::endl;
-	
-	try 
-	{
-		Bureaucrat kayed("kayed",10);
-		std::cout << kayed << std::endl;
-		RobotomyRequestForm g("hhhh");
-		g.beSigned(kayed);
-		std::cout << g << std::endl;
-		kayed.executeForm(g);
-	}
-	catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-	}
 }
 

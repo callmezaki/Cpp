@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Sat Dec 24 19:37:54 2022
+# Make data base, printed on Sun Dec 25 19:35:36 2022
 
 # Variables
 
@@ -35,7 +35,7 @@ MAKEFILE_LIST :=
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.6JOJdnSg4R/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.cMO9alX486/Render
 # environment
 PATH = /Users/zait-sli/goinfre/homebrew/bin:/Users/zait-sli/goinfre/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
@@ -45,12 +45,9 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ePj9rgXheh/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.eAj6Eanhpz/Listeners
 # automatic
 %F = $(notdir $%)
- 
-make: *** No rule to make target `all'.  Stop.
-
 # environment
 PWD = /Users/zait-sli/Desktop/Cpp
 # environment
@@ -110,7 +107,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000003.Electron
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -142,7 +139,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2846
+VSCODE_PID = 2554
 # variable set hash-table stats:
 # Load=64/1024=6%, Rehash=0, Collisions=1/85=1%
 
@@ -226,6 +223,8 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Sat Dec 24 19:37:54 2022
+# Finished Make data base on Sun Dec 25 19:35:36 2022
 
  
+make: *** No rule to make target `all'.  Stop.
+

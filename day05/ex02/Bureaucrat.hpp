@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 18:08:50 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/24 17:57:37 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/25 12:45:43 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ class Bureaucrat
 		int getGrade(void) const;
 		void incrementGrade(void);
 		void decrementGrade(void);
-		void signForm(const class AForm &F) const;
-		void executeForm(AForm const & form);
+		void signForm(const class Form &F) const;
+		void executeForm(Form const & form);
 				
 };
 
