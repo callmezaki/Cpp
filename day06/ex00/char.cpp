@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   char.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/26 14:59:31 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/28 23:01:39 by zait-sli         ###   ########.fr       */
+/*   Created: 2022/12/29 05:05:33 by zait-sli          #+#    #+#             */
+/*   Updated: 2022/12/29 05:15:16 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <iostream>
-# include <string>
-#include <ctype.h>
-#include <sstream>
 #include "literal.hpp"
 
-int main(int ac, char **av)
+
+void charLiteral(char c)
 {
-	if (ac != 2)
-		return (std::cout << "Wrong number of args" << std::endl, 1);
-	std::string str = std::string(av[1]);
-	literal l(str);
-	std::cout << l.getType() << std::endl;
+	std::cout << "char: " << c << std::endl; 
+	std::cout << "int: " << static_cast<int>(c) << std::endl;
+	std::cout << "float: " << static_cast<float>(c) << std::endl;
+	std::cout << "double: " << static_cast<double>(c) << std::endl;
+	// std::cout << "float: " << c << std::endl; 
 }

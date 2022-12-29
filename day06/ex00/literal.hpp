@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:34:24 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/27 02:11:53 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/29 05:11:24 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <string>
+# include <limits>
+# include <float.h>
 
 
 class literal
@@ -36,11 +38,15 @@ class literal
 		int doubleCheck(void);
 		int floatCheck(void);
 		bool numberCheck(void);
+		bool signCheck(void);
+		bool pointCheck(void);
 		void myTrim(void);
 		// Operators
 		literal & operator=(const literal &assign);
 		
 		
 };
+
+void charLiteral(char c);
 
 #endif
