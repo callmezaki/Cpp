@@ -6,14 +6,11 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 14:59:31 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/30 05:51:43 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/31 06:22:01 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <iostream>
-# include <string>
-#include <ctype.h>
-#include <sstream>
+
 #include "literal.hpp"
 
 int main(int ac, char **av)

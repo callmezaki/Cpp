@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Sat Dec 31 02:31:57 2022
+# Make data base, printed on Sat Dec 31 04:20:21 2022
 
 # Variables
 
@@ -34,15 +34,17 @@ MAKEFILE_LIST :=
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.zXEgF4KAPR/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.JrqHrl1XsC/Render
 # environment
-PATH = /usr/bin:/bin:/usr/sbin:/sbin
+PATH = /Users/zait-sli/goinfre/homebrew/bin:/Users/zait-sli/goinfre/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.d2JLpCVxib/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.dPMHHBDuct/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -62,6 +64,8 @@ LOGNAME = zait-sli
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
+ZSH = /Users/zait-sli/.oh-my-zsh
+# environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
@@ -79,6 +83,8 @@ MAKE_VERSION := 3.81
 USER = zait-sli
 # makefile
 .DEFAULT_GOAL := 
+# environment
+LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
@@ -111,8 +117,12 @@ __CF_USER_TEXT_ENCODING = 0x18D19:0x0:0x0
 COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
+# environment
+HOMEBREW_NO_AUTO_UPDATE = 1
 # automatic
 <F = $(notdir $<)
+# environment
+PAGER = less
 # environment
 LC_ALL = C
 # environment
@@ -128,9 +138,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 4809
+VSCODE_PID = 4315
 # variable set hash-table stats:
-# Load=59/1024=6%, Rehash=0, Collisions=1/80=1%
+# Load=64/1024=6%, Rehash=0, Collisions=1/85=1%
 
 # Pattern-specific Variable Values
 
@@ -212,7 +222,7 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Sat Dec 31 02:31:57 2022
+# Finished Make data base on Sat Dec 31 04:20:21 2022
 
  
 make: *** No rule to make target `all'.  Stop.

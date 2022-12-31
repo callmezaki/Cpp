@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:34:24 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/30 00:36:54 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/31 06:21:37 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string>
 # include <limits>
 # include <float.h>
+#include <ctype.h>
 
 
 class literal
@@ -25,9 +26,9 @@ class literal
 		std::string s;
 		std::string type;
 		bool valid;
+		literal();
 	public:
 		// Constructors
-		literal();
 		literal(std::string str);
 		literal(const literal &copy);
 		// Destructor
