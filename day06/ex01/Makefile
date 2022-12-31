@@ -1,8 +1,8 @@
-NAME = Convert
+NAME = Serialization
 
 CC = c++ -Wall -Wextra -Werror  -std=c++98 
 
-OBJECTS = main.o literal.o Convert.o
+OBJECTS = main.o Serialization.o
 
 
 COLOR = \033[0;32m
@@ -10,7 +10,7 @@ COLOR = \033[0;32m
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	@$(CC) main.cpp  literal.cpp Convert.cpp -o $(NAME)
+	@$(CC) main.cpp  Serialization.cpp -o $(NAME)
 
 %.o : %.cpp 
 	@$(CC) -c $<

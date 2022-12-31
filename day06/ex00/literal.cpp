@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:34:28 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/29 05:12:31 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/30 05:51:22 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ literal::literal(std::string str)
 	s = str;
 	myTrim();
 	findType();
-	// std::cout << ":" << s << ":";
 	if (type == "int" || type == "double" || type == "float")
 		valid = numberCheck();
 	else if (type == "char")
@@ -31,6 +30,10 @@ literal::literal(std::string str)
 		type = "9alwa";
 	if (type == "char")
 		charLiteral(s.data()[0]);
+	else if (type == "int")
+		intLiteral(atoi(s.data()));
+	else if (type == "double" || type == "float")
+		doubleLiteral(atof(s.data()));
 }
 
 literal::literal(const literal &copy)
@@ -84,7 +87,7 @@ bool literal::signCheck(void)
 		if (s.data()[i] == '+' || s.data()[i] == '-')
 			count++;
 	}
-	if (count == 0 || (count == 1 && (s.data()[0] == '+' || s.data()[0] == '-')))
+	if (count == 0 || (count == 1 && isdigit(s.data()[1]) &&(s.data()[0] == '+' || s.data()[0] == '-')))
 		return true;
 	else
 		return false;

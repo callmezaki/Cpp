@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:34:24 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/29 05:11:24 by zait-sli         ###   ########.fr       */
+/*   Updated: 2022/12/30 00:36:54 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ class literal
 };
 
 void charLiteral(char c);
+void intLiteral(int c);
+void doubleLiteral(double c);
 
 #endif
