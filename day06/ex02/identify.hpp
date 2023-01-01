@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serialization.cpp                                  :+:      :+:    :+:   */
+/*   identify.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/31 00:20:25 by zait-sli          #+#    #+#             */
-/*   Updated: 2023/01/01 01:52:36 by zait-sli         ###   ########.fr       */
+/*   Created: 2023/01/01 02:08:43 by zait-sli          #+#    #+#             */
+/*   Updated: 2023/01/01 02:55:56 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serialization.hpp"
+#ifndef SERIALIZATION_HPP
+# define SERIALIZATION_HPP
 
-uintptr_t serialize(Data* ptr)
-{
-	return reinterpret_cast<uintptr_t>(ptr);
-}
-Data* deserialize(uintptr_t raw)
-{
-	return reinterpret_cast<Data*>(raw);
-}
+# include <iostream>
+# include <string>
+
+class Base {
+	public :
+		virtual ~Base(){};
+};
+class A : public Base{};
+class B : public Base{};
+class C : public Base{};
+
+Base * generate(void);
+void identify(Base* p);
+void identify(Base& p);
+
+#endif
