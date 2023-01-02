@@ -60,3 +60,19 @@ void intLiteral(int c)
 	std::cout << "float: " << static_cast<float>(c) << ".0f"<< std::endl;
 	std::cout << "double: " << static_cast<double>(c)<< ".0" << std::endl;
 }
+
+void handleNan(std::string s)
+{
+	std::cout << "char: impossible"<< std::endl;
+	std::cout << "int: impossible"<< std::endl;
+	if (s == "nan" || s == "nanf")
+	{
+		std::cout << "float: nanf" << std::endl;
+		std::cout << "double: nan" << std::endl;
+	}
+	else
+	{
+		std::cout << "float: " << atof(s.data()) << "f" << std::endl;
+		std::cout << "double: " << atof(s.data()) << std::endl;
+	}
+}

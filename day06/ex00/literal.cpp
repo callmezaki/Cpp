@@ -20,25 +20,26 @@ literal::literal()
 literal::literal(std::string str)
 {
 	s = str;
-	myTrim();
 	findType();
 	if (type == "int" || type == "double" || type == "float")
 		valid = numberCheck();
 	else if (type == "char")
 		valid = true;
-	if (!valid)
-		type = "9alwa";
 	if (type == "char")
 		charLiteral(s.data()[0]);
 	else if (type == "int")
 		intLiteral(atoi(s.data()));
 	else if (type == "double" || type == "float")
 		doubleLiteral(atof(s.data()));
+	else if (s == "nan" || s == "+inf" || s == "-inf" || s == "+inff"|| s == "-inff" || s == "nanf")
+		handleNan(s);
+	else
+		std::cout << "Not a valid argument" << std::endl;
 }
 
 literal::literal(const literal &copy)
 {
-	(void) copy;
+	*this = copy;
 }
 
 
@@ -52,7 +53,8 @@ literal::~literal()
 // Operators
 literal & literal::operator=(const literal &assign)
 {
-	(void) assign;
+	this->s = assign.s;
+	this->type = assign.type;
 	return *this;
 }
 
@@ -127,7 +129,7 @@ void literal::findType(void)
 		else if(floatCheck())
 			type = "float";
 		else
-			type = "9alwa";
+			type = "nothing";
 	}
 }
 
@@ -165,9 +167,4 @@ bool literal::numberCheck(void)
 			return false;
 	}
 	return true;
-}
-
-void literal::myTrim(){
-	s = s.substr(s.find_first_not_of(" \t\f\v\n\r"), s.length());
-	s = s.substr(0, s.find_last_not_of(" \t\f\v\n\r") +1);
 }

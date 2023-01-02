@@ -41,7 +41,6 @@ class literal
 		bool numberCheck(void);
 		bool signCheck(void);
 		bool pointCheck(void);
-		void myTrim(void);
 		// Operators
 		literal & operator=(const literal &assign);
 		
@@ -51,5 +50,6 @@ class literal
 void charLiteral(char c);
 void intLiteral(int c);
 void doubleLiteral(double c);
+void handleNan(std::string s);
 
 #endif
