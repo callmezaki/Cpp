@@ -1,16 +1,16 @@
-NAME = easyfind
+NAME = span
 
 CC = c++ -Wall -Wextra -Werror  -std=c++98 
 
-OBJECTS = main.o 
+OBJECTS = main.o span.o
 
 
 COLOR = \033[0;32m
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS) easyfind.hpp
-	@$(CC) main.cpp  -o $(NAME)
+$(NAME): $(OBJECTS) span.hpp
+	@$(CC) main.cpp span.cpp -o $(NAME)
 
 %.o : %.cpp 
 	@$(CC) -c $<
