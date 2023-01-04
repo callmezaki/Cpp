@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/02 07:49:10 by zait-sli          #+#    #+#             */
-/*   Updated: 2023/01/03 05:36:03 by zait-sli         ###   ########.fr       */
+/*   Created: 2023/01/03 07:53:49 by zait-sli          #+#    #+#             */
+/*   Updated: 2023/01/04 09:07:58 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#include "easyfind.hpp"
 
-# include <iostream>
-# include <string>
-
-template <typename T> 
-void print_elm(T const & a)
+ 
+int main()
 {
-    std::cout << a << std::endl;
+    std::vector<int> vec;
+    std::vector<int>::iterator it;
+ 
+    vec.push_back(10);
+    vec.push_back(1);
+    vec.push_back(50);
+    vec.push_back(6);
+    vec.push_back(78);
+    vec.push_back(9);
+    std::cout << std::endl;
+    ::easyfind(vec,10);
+    ::easyfind(vec,6);
+    ::easyfind(vec,5555);
+    return 0;
 }
 
-
-template <typename T> 
-void iter(T *s,int len,void (*f)(T const &))
-{
-    if (len < 0)
-        len = 0;
-    for(int i = 0; i < len; i++)
-        f(s[i]);
-}
-
-
-
-#endif

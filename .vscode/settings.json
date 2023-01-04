@@ -67,6 +67,27 @@
 		"vector": "cpp",
 		"__functional_base_03": "cpp",
 		"filesystem": "cpp",
-		"*.tpp": "cpp"
+		"*.tpp": "cpp",
+		"__tree": "cpp",
+		"cfenv": "cpp",
+		"cinttypes": "cpp",
+		"clocale": "cpp",
+		"condition_variable": "cpp",
+		"csetjmp": "cpp",
+		"csignal": "cpp",
+		"forward_list": "cpp",
+		"future": "cpp",
+		"list": "cpp",
+		"map": "cpp",
+		"numeric": "cpp",
+		"queue": "cpp",
+		"random": "cpp",
+		"regex": "cpp",
+		"scoped_allocator": "cpp",
+		"set": "cpp",
+		"thread": "cpp",
+		"typeindex": "cpp",
+		"unordered_set": "cpp",
+		"valarray": "cpp"
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 07:39:12 by zait-sli          #+#    #+#             */
-/*   Updated: 2023/01/02 08:21:29 by zait-sli         ###   ########.fr       */
+/*   Updated: 2023/01/03 05:36:12 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-    char p[3] = {'a','b','c'};
+    std::string const p[3] = {"khoubza","tiyara","kamayou"};
     int o[3] = {1,2,3};
 
     ::iter(p,3,::print_elm);

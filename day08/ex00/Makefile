@@ -1,6 +1,6 @@
-NAME = Array
+NAME = easyfind
 
-CC = c++ -Wall -Wextra -Werror  -std=c++98 
+CC = c++ #-Wall -Wextra -Werror  -std=c++98 
 
 OBJECTS = main.o 
 
@@ -9,7 +9,7 @@ COLOR = \033[0;32m
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS) Array.hpp
+$(NAME): $(OBJECTS) easyfind.hpp
 	@$(CC) main.cpp  -o $(NAME)
 
 %.o : %.cpp 

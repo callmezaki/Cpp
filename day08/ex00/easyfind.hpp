@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/02 07:49:10 by zait-sli          #+#    #+#             */
-/*   Updated: 2023/01/03 05:36:03 by zait-sli         ###   ########.fr       */
+/*   Created: 2023/01/03 07:54:11 by zait-sli          #+#    #+#             */
+/*   Updated: 2023/01/04 09:05:39 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
-# include <iostream>
-# include <string>
 
-template <typename T> 
-void print_elm(T const & a)
+#include <iostream>
+#include <vector>
+#include<iterator>
+
+template <typename T>
+int easyfind(T vec, int gg)
 {
-    std::cout << a << std::endl;
-}
-
-
-template <typename T> 
-void iter(T *s,int len,void (*f)(T const &))
-{
-    if (len < 0)
-        len = 0;
-    for(int i = 0; i < len; i++)
-        f(s[i]);
+    typename T::iterator it;
+    it = std::find (vec.begin(), vec.end(), gg);
+    if (it != vec.end())
+    {
+        std::cout << "found" << std::endl;
+        return 1;
+    }
+    else
+    {
+        std::cout << "waaalo" << std::endl;
+        return 0;
+    }
 }
 
 
