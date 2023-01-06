@@ -1,16 +1,16 @@
-NAME = Span
+NAME = MutantStack
 
 CC = c++ -Wall -Wextra -Werror  -std=c++98 
 
-OBJECTS = main.o Span.o
+OBJECTS = main.o 
 
 
 COLOR = \033[0;32m
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS) Span.hpp
-	@$(CC) main.cpp Span.cpp -o $(NAME)
+$(NAME): $(OBJECTS) MutantStack.hpp
+	@$(CC) main.cpp -o $(NAME)
 
 %.o : %.cpp 
 	@$(CC) -c $<

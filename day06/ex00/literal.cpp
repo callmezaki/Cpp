@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 01:34:28 by zait-sli          #+#    #+#             */
-/*   Updated: 2022/12/31 06:22:52 by zait-sli         ###   ########.fr       */
+/*   Updated: 2023/01/06 12:07:46 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ literal::literal(std::string str)
 		valid = numberCheck();
 	else if (type == "char")
 		valid = true;
+	if (!valid)
+		type = "nothing";
+	std::cout << type << std::endl;
 	if (type == "char")
 		charLiteral(s.data()[0]);
 	else if (type == "int")
