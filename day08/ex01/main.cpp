@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 07:53:49 by zait-sli          #+#    #+#             */
-/*   Updated: 2023/01/06 11:01:01 by zait-sli         ###   ########.fr       */
+/*   Updated: 2023/01/06 16:52:09 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,16 @@
  
 int main()
 {
-    Span sp = Span(5);
+    Span sp = Span(1000002);
+    std::vector<int> vec;
+    srand(time(0));
+    for(int i = 0; i < 199; i++)
+        vec.push_back(rand());
     try
     {
+        sp.addNumbers(vec.begin(), vec.end());
         sp.addNumber(6);
-        sp.addNumber(3);
-        sp.addNumber(17);
-        sp.addNumber(9);
-        sp.addNumber(11);
+        sp.addNumber(7);
         std::cout << sp.shortestSpan() << std::endl;
         std::cout << sp.longestSpan() << std::endl;
     }

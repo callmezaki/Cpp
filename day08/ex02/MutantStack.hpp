@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 12:25:21 by zait-sli          #+#    #+#             */
-/*   Updated: 2023/01/06 13:45:53 by zait-sli         ###   ########.fr       */
+/*   Updated: 2023/01/06 18:41:23 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,33 +20,22 @@
 #include <list>
 
 template <class T, class Container = std::deque<T> > 
-class MutantStack
+class MutantStack : public std::stack<T>
 {
-    private:
-        Container c;
     public:
         typedef typename Container::iterator iterator;
-        T& top(void){
-            return *c.begin();
-        }
+        typedef typename Container::reverse_iterator reverse_iterator;
         iterator begin(void){
-            return c.begin();
+            return this->c.begin();
         }
         iterator end(void){
-            return c.end();
+            return this->c.end();
         }
-        void push(T p){
-            c.push_back(p);
+        reverse_iterator rbegin(void){
+            return this->c.rbegin();
         }
-        void pop(){
-            c.pop_back();
-        }
-        unsigned int  size(){
-            unsigned int len = 0;
-
-            for (iterator i = c.begin(); i != end(); i++)
-                len++;
-            return len;
+        reverse_iterator rend(void){
+            return this->c.rend();
         }
 };
 

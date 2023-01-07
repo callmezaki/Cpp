@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 07:53:49 by zait-sli          #+#    #+#             */
-/*   Updated: 2023/01/06 13:49:57 by zait-sli         ###   ########.fr       */
+/*   Updated: 2023/01/06 18:45:12 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ int main()
     mstack.push(3);
     mstack.push(5);
     mstack.push(737);
-    //[...]
     mstack.push(0);
     MutantStack<int>::iterator it = mstack.begin();
     MutantStack<int>::iterator ite = mstack.end();
+    MutantStack<int>::reverse_iterator rit = mstack.rbegin();
+    MutantStack<int>::reverse_iterator rite = mstack.rend();
     ++it;
     --it;
     while (it != ite)
@@ -35,31 +36,14 @@ int main()
         std::cout << *it << std::endl;
         ++it;
     }
-    // std::stack<int> s(mstack);
-
-    std::cout << "\n\n" << std::endl;
-    
-    std::list<int> mstack2;
-    mstack2.push_back(5);
-    mstack2.push_back(17);
-    std::cout << *mstack2.begin() << std::endl;
-    mstack2.pop_back();
-    std::cout << mstack2.size() << std::endl;
-    mstack2.push_back(3);
-    mstack2.push_back(5);
-    mstack2.push_back(737);
-    //[...]
-    mstack2.push_back(0);
-    std::list<int>::iterator it2 = mstack2.begin();
-    std::list<int>::iterator ite2 = mstack2.end();
-    ++it2;
-    --it2;
-    while (it2 != ite2)
+    std::cout << std::endl;
+    while (rit != rite)
     {
-        std::cout << *it2 << std::endl;
-        ++it2;
+        std::cout << *rit << std::endl;
+        ++rit;
     }
-    // std::stack<int> s(mstack2);
+    std::stack<int> s(mstack);
+
     return 0;
 }
 

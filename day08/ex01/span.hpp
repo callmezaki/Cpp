@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 09:12:40 by zait-sli          #+#    #+#             */
-/*   Updated: 2023/01/06 11:37:59 by zait-sli         ###   ########.fr       */
+/*   Updated: 2023/01/06 16:09:12 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include<iterator>
 #include <limits>
 
+typedef std::vector<int>::iterator iterator;
 
 class Span 
 {
@@ -32,7 +33,7 @@ class Span
 		int shortestSpan();
 		int longestSpan();
 		void addNumber(int number);
-		void addNumbers(unsigned int numbers);
+		void addNumbers(iterator begin, iterator end);
 		class reachedMaxNumbers  : public std::exception
 		{
 			public:

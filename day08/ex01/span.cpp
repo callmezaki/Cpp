@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   span.cpp                                           :+:      :+:    :+:   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 09:12:35 by zait-sli          #+#    #+#             */
-/*   Updated: 2023/01/06 11:57:16 by zait-sli         ###   ########.fr       */
+/*   Updated: 2023/01/06 19:20:40 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+
 
 
 Span::Span()
@@ -27,7 +28,6 @@ Span::Span(const Span &copy)
 	*this = copy;
 }
 
-
 Span::~Span()
 {
 
@@ -40,10 +40,14 @@ void Span::addNumber(int number)
 	vec.push_back(number);
 }
 
-// void addNumbers(unsigned int numbers)
-// {
-// 	std::insert
-// }
+void Span::addNumbers(iterator begin, iterator end)
+{
+	while(begin != end)
+	{
+		addNumber(*begin);
+		begin++;
+	}
+}
 
 int Span::shortestSpan()
 {
@@ -64,7 +68,6 @@ int Span::longestSpan()
 {
 	if(vec.size() < 2)
 		throw sizeTooLow();
-	std::cout << vec.size() << std::endl;
 	return  *std::max_element(vec.begin(),vec.end()) - *std::min_element(vec.begin(),vec.end());
 }
 

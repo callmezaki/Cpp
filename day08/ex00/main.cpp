@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 07:53:49 by zait-sli          #+#    #+#             */
-/*   Updated: 2023/01/04 09:07:58 by zait-sli         ###   ########.fr       */
+/*   Updated: 2023/01/06 16:47:53 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,16 @@ int main()
     vec.push_back(78);
     vec.push_back(9);
     std::cout << std::endl;
-    ::easyfind(vec,10);
-    ::easyfind(vec,6);
-    ::easyfind(vec,5555);
+    try
+    {
+        ::easyfind(vec,9);
+        ::easyfind(vec,6);
+        ::easyfind(vec,10);
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     return 0;
 }
 
