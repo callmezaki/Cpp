@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 08:31:54 by zait-sli          #+#    #+#             */
-/*   Updated: 2023/01/03 05:41:40 by zait-sli         ###   ########.fr       */
+/*   Updated: 2023/01/13 22:26:34 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,7 @@ class Array
         T *A;
         unsigned int n;
     public :
-        Array()
-        {
-            n = 0;
-            A = NULL;
-        }
+        Array();
         ~Array()
         {
             delete [] A;
