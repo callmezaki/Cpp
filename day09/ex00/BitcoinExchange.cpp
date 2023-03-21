@@ -6,11 +6,12 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 22:41:42 by zait-sli          #+#    #+#             */
-/*   Updated: 2023/03/15 04:00:20 by zait-sli         ###   ########.fr       */
+/*   Updated: 2023/03/16 17:11:07 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
+#include <ctime>
 
 // Constructors
 BitcoinExchange::BitcoinExchange()
@@ -110,13 +111,15 @@ int BitcoinExchange::traetInputLine(std::string line)
 	return (1);
 }
 
-int checkInt(std::string s)
+int checkInt(std::string s,int a)
 {
 	char c;
 	for (size_t i = 0; i < s.length() ; i++)
 	{
 		c = s.at(i);
-		if (!isnumber(c) && c != '.' && c != '-')
+		if (!isnumber(c) && c != '.' && c != '-' && a == 0)
+			return(1);
+		else if (!isnumber(c) && c != '-' && a == 1)
 			return(1);
 	}
 	return (0);	
@@ -124,13 +127,24 @@ int checkInt(std::string s)
 
 int checkValue(std::string value , std::string line)
 {
-	long long num = atof(value.c_str());
-	if (checkInt(value))
+	double num;
+	int Pcount = 0;
+	int Mcount = 0;
+	
+	for (size_t i = 0; i < value.length(); i++)
+	{
+		if (value.at(i) == '.')
+			Pcount++;
+		if (value.at(i) == '-')
+			Mcount++;
+	}
+	if (checkInt(value, 0) || Pcount > 1 || Mcount > 1 || (Mcount == 1 && value.at(0) != '-'))
 	{
 		std::cout << "Error: bad input => " << line << std::endl;
 		return 1;
 	}
-	else if (num < 0)
+	num = atof(value.c_str());
+	if (num < 0)
 	{
 		std::cout << "Error: not a positive number." << std::endl;
 		return 1;
@@ -143,31 +157,77 @@ int checkValue(std::string value , std::string line)
 	return 0;
 }
 
-int checkValidDate(std::string date, std::string value,std::string line)
+int checkDay( int year,int month, int day)
 {
-	if (date.length() != 10 || checkInt(date) || date.find("-") != 4 || date.find_last_of("-") != 7)
+	if (month == 2)
+	{
+		if (year % 4 == 0)
+		{
+			if  (day > 29)
+			{
+				std::cout << "Error: month " << month << " has 29 days" << std::endl;
+				return 1;
+			}
+		}
+		else
+		{
+			if  (day > 28)
+			{
+				std::cout << "Error: month " << month << " has 28 days" << std::endl;
+				return 1;
+			}
+		}
+	}
+	else if ((month % 2) == 1)
+	{
+		if  (day > 31)
+		{
+			std::cout << "Error: month " << month << " has 31 days" << std::endl;
+			return 1;
+		}
+	}
+	else
+	{
+		if  (day > 30)
+		{
+			std::cout << "Error: month " << month << " has 31 days" << std::endl;
+			return 1;
+		}
+	}
+	if (year == 2009 && month == 1 && day < 2)
+	{
+		std::cout << "Error: btc started on 2009-01-02"  << std::endl;
+		return 1;
+	}
+	return 0;
+}
+
+int checkValidDate(std::string date,std::string line)
+{
+	s_date sDate;
+
+	if (date.length() != 10 || checkInt(date,1) || date.find("-") != 4 || date.find_last_of("-") != 7)
 	{
 		std::cout << "Error: bad input => " << line << std::endl;
 		return 1;
 	}
 	else
 	{
-		std::string y = date.substr(0,4);
-		std::string m = date.substr(5,2);
-		std::string d = date.substr(8,2);
-		if (atol(m.c_str()) < 0 || atol(m.c_str()) > 12 || atol(d.c_str()) < 0 || \
-		atol(d.c_str()) > 31 ||  atol(y.c_str()) < 0 )
+		sDate.y = date.substr(0,4);
+		sDate.m = date.substr(5,2);
+		sDate.d = date.substr(8,2);
+		if (atoi(sDate.y.c_str()) < 2009)
 		{
-			std::cout << "Error: date is not valid => " << date << std::endl;
+			std::cout << "Error: btc started on 2009-01-02"  << std::endl;
 			return 1;
 		}
-		else
+		else if (atoi(sDate.m.c_str()) < 1 || atoi(sDate.m.c_str()) > 12)
 		{
-			if (checkValue(value, line));
-			else
-				std::cout << "Error: date is does not exist in database" << std::endl;
+			std::cout << "Error: is there a month => " << sDate.m << std::endl;
 			return 1;
 		}
+		else if (checkDay(atoi(sDate.y.c_str()),atoi(sDate.m.c_str()),atoi(sDate.d.c_str())))
+			return 1;
 	}
 	return 0;
 }
@@ -178,16 +238,15 @@ void BitcoinExchange::getBtcValue(std::string date ,std::string value ,std::stri
 		std::cout << "Error: bad input => " << line << std::endl;
 	else
 	{
-		if(db.find(date) != db.end())
-		{	if (checkValue(value, line));
-			else
-				std::cout << date << " => " << value << " = " << atof(value.c_str()) * atof(db[date].c_str()) << std::endl;
-		}
+		if (checkValidDate(date, line) || checkValue(value,line));
 		else
 		{
-			if (checkValidDate(date, value, line) || checkValue(value, line));
+			it = db.lower_bound(date);
+			if (it == db.begin() || db.find(date) != db.end());
 			else
-				std::cout << "Error: some other error " << line << std::endl;
+				it--;
+			nDate = it->first;
+			std::cout << date << " => " << value << " = " << atof(value.c_str()) * atof(db[nDate].c_str()) << std::endl;
 		}
 	}
 }

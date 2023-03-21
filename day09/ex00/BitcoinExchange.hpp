@@ -6,7 +6,7 @@
 /*   By: zait-sli <zait-sli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 22:41:47 by zait-sli          #+#    #+#             */
-/*   Updated: 2023/03/15 03:00:37 by zait-sli         ###   ########.fr       */
+/*   Updated: 2023/03/16 16:49:00 by zait-sli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 # include <string>
 # include <sstream>
 # include <map>
+
+
+typedef struct t_date
+{
+	std::string y;
+	std::string m;
+	std::string d;
+} s_date;
 
 class BitcoinExchange
 {
@@ -45,10 +53,10 @@ class BitcoinExchange
 		
 	private:
 		std::string file;
+		std::string nDate;
 		std::string DataBase; 
 		std::string inputFile; 
 		std::map<std::string, std::string> db;
-		std::map<std::string, std::string> input;
 		std::map<std::string, std::string>::iterator it;
 };
 

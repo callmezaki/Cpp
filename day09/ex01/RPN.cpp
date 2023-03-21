@@ -29,37 +29,73 @@ RPN::RPN(std::string args)
 	if (intialArgsCheck())
 		return ;
 	calculate();
+}
 
+
+int operationResult(int num1, int num2, int op)
+{
+	switch (op)
+	{
+	case 43:
+		return num1 + num2;
+	case 42:
+		return num1 * num2;
+	case 45:
+		return num1 - num2;
+	case 47:
+		if (num2 == 0)
+		{
+			std::cout << "Error" << std::endl;
+			exit (1);
+		}
+		return num1 / num2;
+	}
+	return 0;
 }
 
 void RPN::calculate()
 {
 	std::string num;
 	size_t t;
+	size_t i = 0;
 
 	while(1)
 	{
-		t = args.find_first_of(" ");
-		if (t == std::string::npos && args.length())
-		{
-			num  = args.substr(0,t);
-			list.push_back(num);
-		}
+		t = args.find(" ");
 		if (t == std::string::npos)
 			break;
-		num  = args.substr(0,t);
-		args = args.substr(t + 1);
-		list.push_back(num);
+		args = args.replace(t,1,"");
 	}
-	// check if any of the numbers length is more than 1 then returns 0
-	// std::list<std::string>::iterator it = list.begin();
-	// std::string val;
-	// while(it != list.end())
-	// {
-	// 	val = *it;
-	// 	if (isnumber(val.c_str().at(0)))
 
-	// }
+	char val;
+	while(i < args.length())
+	{
+		val = args.at(i);
+		if (isnumber(val))
+			stack.push(val - '0');
+		else
+		{
+			if (stack.size() > 1)
+			{
+				op = val;
+				nb2 = stack.top();
+				stack.pop();
+				nb1 = stack.top();
+				stack.pop();
+				stack.push(operationResult(nb1,nb2, op));
+			}
+			else{
+				std::cout << "Error" << std::endl;
+				return ;
+			}
+		}
+		i++;
+	}
+	if (stack.size() == 1)
+		std::cout << stack.top() << std::endl;
+	else{
+		std::cout << "Error" << std::endl;
+	}
 }
 
 int RPN::intialArgsCheck()
